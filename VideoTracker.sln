@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.106
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VideoTracker", "VideoTracker.csproj", "{546D7B01-FA44-400F-8BD7-E9008D72494F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{546D7B01-FA44-400F-8BD7-E9008D72494F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{546D7B01-FA44-400F-8BD7-E9008D72494F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{546D7B01-FA44-400F-8BD7-E9008D72494F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{546D7B01-FA44-400F-8BD7-E9008D72494F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {833587B1-4078-4BED-BCAD-651FD2543717}
+	EndGlobalSection
+EndGlobal

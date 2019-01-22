@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+<!-- saved from url=(0086)https://www.dotnetcurry.com/angularjs/1432/aspnet-core-apps-using-angular-cli-template -->
+<html lang="en" class="wf-hindvadodara-n3-active wf-hindvadodara-n4-active wf-hindvadodara-n5-active wf-hindvadodara-n6-inactive wf-hindvadodara-n7-inactive wf-active"><head id="ctl00_Head1"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>
+	Building Angular Applications using ASP.NET Core Angular CLI Template | DotNetCurry
+</title><meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"><meta name="description" content="ASP.NET core now has good support for Angular development using Angular CLI. In this tutorial, build a simple CRUD application using the ASP.NET Core Angular CLI template."><meta name="keywords" content="ASP.NET Core"><meta name="author" content="DotNetCurry.com"><link rel="shortcut icon" href="https://www.dotnetcurry.com/img/favicon.ico"><link rel="icon" type="image/ico" href="https://www.dotnetcurry.com/img/favicon.ico"><link rel="stylesheet" href="./Building Angular Applications using ASP.NET Core Angular CLI Template _ DotNetCurry_files/font-awesome.min.css"><link rel="canonical" href="https://www.dotnetcurry.com/angularjs/1432/aspnet-core-apps-using-angular-cli-template"><link href="./Building Angular Applications using ASP.NET Core Angular CLI Template _ DotNetCurry_files/site" rel="stylesheet">
+
+
+    <style>.async-hide { opacity: 0 !important} </style>
+    <script type="text/javascript" async="" src="./Building Angular Applications using ASP.NET Core Angular CLI Template _ DotNetCurry_files/js"></script><script async="" src="./Building Angular Applications using ASP.NET Core Angular CLI Template _ DotNetCurry_files/uwt.js.téléchargement"></script><script async="" src="./Building Angular Applications using ASP.NET Core Angular CLI Template _ DotNetCurry_files/fbevents.js.téléchargement"></script><script async="" src="./Building Angular Applications using ASP.NET Core Angular CLI Template _ DotNetCurry_files/analytics.js.téléchargement"></script><script>(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
+    h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
+    (a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
+    })(window,document.documentElement,'async-hide','dataLayer',4000,
+    {'GTM-NJXQ5BG':true});</script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-2417460-4', 'auto');
+      ga('require', 'GTM-NJXQ5BG');
+      ga('send', 'pageview');
+    </script>
+
+    <!-- Facebook Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1902706389940870', {
+    //em: 'insert_email_variable'
+    });
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1902706389940870&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- DO NOT MODIFY -->
+    <!-- End Facebook Pixel Code -->
+
+    <!-- Twitter universal website tag code May 30 17 -->
+    <script>
+    !function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
+    },s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='//static.ads-twitter.com/uwt.js',
+    a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
+    // Insert Twitter Pixel ID and Standard Event data below
+    twq('init','nw0gz');
+    twq('track','PageView');
+    </script>
+    <!-- End Twitter universal website tag code --><link rel="stylesheet" href="./Building Angular Applications using ASP.NET Core Angular CLI Template _ DotNetCurry_files/css" media="all">
+<link id="avast_os_ext_custom_font" href="chrome-extension://eofcbnmajmjmplflapaojjnihcjkigck/common/ui/fonts/fonts.css" rel="stylesheet" type="text/css"></head>
+<body>
+    <form name="aspnetForm" method="post" action="https://www.dotnetcurry.com/angularjs/1432/aspnet-core-apps-using-angular-cli-template?ID=1432" id="aspnetForm">
+<div>
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwULLTE0MDk2ODQwMTdkZJysVikQVHzjAtZqOeUvZO1Bu1pl">
+</div>
+
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="A9C58E29">
+</div>
+        <div class="wrapper">
+            <!-- header -->
+            <header class="header header-megamenu">
+                <nav class="navbar navbar-default" role="navigation">
+                    <div class="container">
+                            <!--<div class="search-bar">                       
+                                <input type="search" onkeyup="executeQuery();" placeholder="Type search text here..." name="search" id="search-keyword">
+                                <div class="search-close" id="x"><i class="fa fa-times"></i></div>                               
+                            </div>-->                
+                       
+
+                            <!-- Brand and toggle get grouped for better mobile display -->
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                                <!--<a class="navbar-brand" href="./index.html">
+                                    <img src="img/dnc-logo-tee-trans.png"
+                                         srcset="img/dnc-logo-small.jpg 1980w, img/dnc-logo-x-small.jpg 320w" 
+                                         sizes ="100vw"
+                                         class="img-responsive" alt="DNC Magazine" />
+                                </a>-->
+                                <a class="navbar-brand" href="https://www.dotnetcurry.com/">
+                                    <img src="./Building Angular Applications using ASP.NET Core Angular CLI Template _ DotNetCurry_files/dnc-logo-small.jpg" class="img-responsive" alt="DNC Magazine">
+                                </a>
+                            </div>
+
+                            <!--<div class="search-trigger pull-right"></div>-->
+
+                            <div class="navbar-social pull-right visible-xs-block, hidden-xs">
+                                <a href="https://www.facebook.com/dotnetcurry" rel="nofollow" target="_blank"><img src="./Building Angular Applications using ASP.NET Core Angular CLI Template _ DotNetCurry_files/fb.png" class="img-responsive" alt="DotNetCurry&#39;s Official Facebook Account"></a>
+                                <a href="https://www.twitter.com/dotnetcurry" rel="nofollow" target="_blank"><img src="./Building Angular Applications using ASP.NET Core Angular CLI Template _ DotNetCurry_files/twit.png" class="img-responsive" alt="DotNetCurry&#39;s Official Twitter Account"></a>
+                                <a href="https://github.com/dotnetcurry" rel="nofollow" target="_blank"><img src="./Building Angular Applications using ASP.NET Core Angular CLI Template _ DotNetCurry_files/git.png" class="img-responsive" alt="DotNetCurry&#39;s Official Github Account"></a>
+                            </div>
+
+                            <!-- Collect the nav links, forms, and other content for toggling -->
+                            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                                <ul class="nav navbar-nav">
+                                    <li class="dropdown megamenu">
+                                        <a href="https://www.dotnetcurry.com/angularjs/1432/aspnet-core-apps-using-angular-cli-template#" class="dropdown-toggle" data-toggle="dropdown">Tutorials <span class="fa fa-angle-down"></span></a>
+                                        <ul class="dropdown-menu">
+                                            <li>
+                                                <div class="row">
+                                                    <div class="col-md-3">
+                                                        <h5>ASP.NET</h5>
+                                                        <a href="https://www.dotnetcurry.com/tutorials/aspnet">ASP.NET</a>
+                                                        <a href="https://www.dotnetcurry.com/tutorials/aspnet-mvc">ASP.NET MVC</a>
+                                                        <a href="https://www.dotnetcurry.com/tutorials/aspnet-core">ASP.NET Core</a>
+                                                        <a href="https://www.dotnetcurry.com/tutorials/sharepoint">SharePoint</a>
+                                                        <a href="https://www.dotnetcurry.com/tutorials/aspnet-ajax" class="last">ASP.NET AJAX</a>
+                                                        <h5>Patterns and Practices</h5>
+                                                        <a href="https://www.dotnetcurry.com/tutorials/software-gardening">Software Gardening</a>
+                                                        <a href="https://www.dotnetcurry.com/tutorials/patterns-practices">Design Patterns</a>
+                                                    </div>
+
+                                                    <div class="col-md-3">
+                                                        <h5>.NET</h5>
+                                                        <a href="https://www.dotnetcurry.com/tutorials/csharp">C#</a>
+                                                        <a href="https://www.dotnetcurry.com/tutorials/visualstudio">Visual Studio</a>
+                                                        <a href="https://www.dotnetcurry.com/tutorials/vsts-tfs">VSTS &amp; TFS</a>
+                                                        <a href="https://www.dotnetcurry.com/tutorials/linq">LINQ</a>
+                                                        <a href="https://www.dotnetcurry.com/tutorials/entityframework">Entity Framework</a>
+                                                        <a href="https://www.dotnetcurry.com/tutorials/dotnetframework">.NET Framework</a>
+                                                        <a href="https://www.dotnetcurry.com/tutorials/dotnet-standard-core">.NET Standard &amp; .NET Core</a>
+                                                        <a href="https://www.dotnetcurry.com/tutorials/wpf">WPF</a>
+                                                        <a href="https://www.dotnetcurry.com/tutorials/wcf">WCF</a>
+                                                        <a href="https://www.dotnetcurry.com/tutorials/winforms">WinForms</a>
+                                                    </div>
+
+                                                    <div class="col-md-3">
+                                                        <h5>Cloud and Mobile</h5>
+                                                        <a href="https://www.dotnetcurry.com/tutorials/windows-azure">Microsoft Azure</a>
+                                                        <a href="https://www.dotnetcurry.com/tutorials/devops">DevOps</a>
+                                                        <a href="https://www.dotnetcurry.com/tutorials/xamarin">Xamarin</a>
+                                                        <a href="https://www.dotnetcurry.com/tutorials/powershell">Powershell</a>
+                                                        <a href="https://www.dotnetcurry.com/tutorials/machine-learning-ai">Machine Learning &amp; AI</a>
+                                                        <a href="https://www.dotnetcurry.com/tutorials/windows-store">UWP &amp; Windows Store</a>
+                                                        <a href="https://www.dotnetcurry.com/tutorials/windowsphone" class="last">Windows Phone</a>
+                                                        <h5>Useful</h5>
+                                                        <a href="https://www.dotnetcurry.com/tutorials/dotnetinterview">.NET Interview Q&amp;A</a>
+                                                        <a href="https://www.dotnetcurry.com/tutorials/product-articles-review">Product Reviews</a>
+                                                        <a href="https://www.dotnetcurry.com/tutorials/general-programming-topics">General Topics</a>
+                                                    </div>
+
+                                                    <div class="col-md-3">
+                                                        <h5>JavaScript</h5>
+                                                        <a href="https://www.dotnetcurry.com/tutorials/jquery-aspnet">jQuery</a>
+                                                        <a href="https://www.dotnetcurry.com/tutorials/angularjs">Angular</a>
+                                                        <a href="https://www.dotnetcurry.com/tutorials/typescript">TypeScript</a>
+                                                        <a href="https://www.dotnetcurry.com/tutorials/nodejs">Node.js</a>
+                                                        <a href="https://www.dotnetcurry.com/tutorials/reactjs">React.js</a>
+                                                        <a href="https://www.dotnetcurry.com/tutorials/backbonejs">Backbone.js</a>
+                                                        <a href="https://www.dotnetcurry.com/tutorials/html5-javascript">HTML5 &amp; JavaScript</a>
+                                                        <a href="https://www.dotnetcurry.com/tutorials/bootstrap-css">Bootstrap &amp; CSS</a>
+                                                    </div>
+
+                                                    <div class="col-md-3">
+                                                        <h5>Publications</h5>
+                                                        <a href="http://www.jquerycookbook.com/" rel="nofollow" target="_blank">Books</a>
+                                                        <a href="https://www.dotnetcurry.com/magazine/" class="last">Magazines</a>
+
+                                                        <h5>Older Technologies</h5>
+                                                        <a href="https://www.dotnetcurry.com/tutorials/silverlight">Silverlight</a>
+                                                        <a href="https://www.dotnetcurry.com/tutorials/expression-web">Expression Web</a>
+                                                        <a href="https://www.dotnetcurry.com/tutorials/expression-blend">Expression Blend</a>
+                                                        <a href="https://www.dotnetcurry.com/tutorials/windows-vista">Windows Vista</a>
+                                                        <a href="https://www.dotnetcurry.com/tutorials/microsoft-word">Word 2007</a>
+                                                        <a href="https://www.dotnetcurry.com/tutorials/microsoft-outlook">Outlook 2007</a>
+                                                        <a href="https://www.dotnetcurry.com/angularjs/1432/aspnet-core-apps-using-angular-cli-template#"></a>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </li>
+
+                                    <li class="dropdown megamenu">
+                                        <a href="https://www.dotnetcurry.com/angularjs/1432/aspnet-core-apps-using-angular-cli-template#" class="dropdown-toggle" data-toggle="dropdown">Featured <span class="fa fa-angle-down"></span></a>
+                                        <ul class="dropdown-menu">
+                                            <li>
+                                                <div class="row">
+                                                    <div class="col-md-3 col-xs-12">
+                                                        <div class="header-post">
+                                                            <a href="https://www.dotnetcurry.com/angular/1385/angular-4-cheat-sheet">
+                                                                <div class="hp-thumb">
+                                                                    <img data-src="/img/header/1385.jpg" class="img-responsive lazyload" alt="">
+                                                                </div>
+                                                            </a>
+
+                                                            <date>Aug 30, 2017</date>
+                                                            <h4><a href="https://www.dotnetcurry.com/angular/1385/angular-4-cheat-sheet">Angular 4 Development Cheat Sheet</a></h4>
+                                                            <p class="hidden-xs">A quick reference guide to get you going with Angular development. It uses Angular v4 with TypeScript.</p>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-3 col-xs-12">
+                                                        <div class="header-post">
+                                                            <a href="https://www.dotnetcurry.com/patterns-practices/1364/error-handling-dotnet-projects">
+                                                                <div class="hp-thumb">
+                                                                    <!-- <div class="hp-overlay">
+                                                        <img src="img/header/gallery.png" alt=""/>
+                                                        <span>12 Photos</span>
+                                                    </div> -->
+                                                                    <img data-src="/img/header/1364.jpg" class="img-responsive lazyload" alt="">
+                                                                </div>
+                                                            </a>
+
+                                                            <date>May 12, 2017</date>
+                                                            <h4><a href="https://www.dotnetcurry.com/patterns-practices/1364/error-handling-dotnet-projects">Error Handling in Large .NET Projects - Best Practices</a></h4>
+                                                            <p class="hidden-xs">Learn some effective error handling strategies that you can use in your .NET projects.</p>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-3 col-xs-12">
+                                                        <div class="header-post">
+                                                            <a href="https://www.dotnetcurry.com/patterns-practices/1375/behavior-driven-development-bdd">
+                                                                <div class="hp-thumb">
+                                                                    <img data-src="/img/header/1375.jpg" class="img-responsive lazyload" alt="">
+                                                                </div>
+                                                            </a>
+                                                            <date>July 3, 2017</date>
+                                                            <h4><a href="https://www.dotnetcurry.com/patterns-practices/1375/behavior-driven-development-bdd">Behavior Driven Development (BDD) – an in-depth look</a></h4>
+                                                            <p class="hidden-xs">Learn how Behavior Driven Development (BDD) works with a real-world example of how to use it.</p>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-3 col-xs-12">
+                                                        <div class="header-post">
+                                                            <a href="https://www.dotnetcurry.com/patterns-practices/1305/aspect-oriented-programming-aop-csharp-using-solid">
+                                                                <div class="hp-thumb">
+                                                                    <img data-src="/img/header/1305.jpg" class="img-responsive lazyload" alt="">
+                                                                </div>
+                                                            </a>
+
+                                                            <date>Sep 25, 2016</date>
+                                                            <h4><a href="https://www.dotnetcurry.com/patterns-practices/1305/aspect-oriented-programming-aop-csharp-using-solid">Aspect Oriented Programming (AOP) in C# with SOLID</a></h4>
+                                                            <p class="hidden-xs">Aspect Oriented Programming (AOP) in C# using SOLID principles, with challenges and solutions.</p>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-3 col-xs-12">
+                                                        <div class="header-post">
+                                                            <a href="https://www.dotnetcurry.com/javascript/1359/javascript-frameworks-aspnet-mvc-developer">
+                                                                <div class="hp-thumb">
+                                                                    <img data-src="/img/header/1359.jpg" class="img-responsive lazyload" alt="">
+                                                                </div>
+                                                            </a>
+
+                                                            <date>Sep 25, 2016</date>
+                                                            <h4><a href="https://www.dotnetcurry.com/javascript/1359/javascript-frameworks-aspnet-mvc-developer">JavaScript Frameworks for ASP.NET MVC Developers</a></h4>
+                                                            <p class="hidden-xs">Learn about a few JavaScript frameworks, and which one will be a good fit in your ASP.NET MVC apps</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </li>
+
+                                    <li class="dropdown megamenu">
+                                        <a href="https://www.dotnetcurry.com/magazine/">.NET Magazines</a>
+                                    </li>
+
+                                    <li class="dropdown dropdown-v1">
+                                        <a href="https://www.dotnetcurry.com/angularjs/1432/aspnet-core-apps-using-angular-cli-template#" class="dropdown-toggle" data-toggle="dropdown">About<span class="fa fa-angle-down"></span></a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="https://www.dotnetcurry.com/About.aspx">About Us</a></li>
+                                            <li><a href="https://www.dotnetcurry.com/WriteForUs.aspx">Write For Us</a></li>
+                                            <li><a href="https://www.dotnetcurry.com/Contact.aspx">Contact Us</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown megamenu">
+                                        <a href="https://www.dotnetcurry.net/s/dnc-products" rel="nofollow" target="_blank">Developer Tools</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- /.navbar-collapse -->
+                    </div>
+                </nav>
+            </header>
+            <!--header-->
+
+            <!-- container -->
+            <div class="container">           
+
+	            <div class="clearfix divborder">              
+
+		                <div class="col-md-8 column">
+                             
+     <div class="col-md-12 articlebox row">
+            <div class="articletitle">
+                   <h1 class="articlehead">
+                     <span id="ctl00_MainContent_lblTitle">Building Angular Applications using ASP.NET Core Angular CLI Template</span>   
+                    </h1>
+                          
+
+ 
+                     
+    
+                        <b>Posted by: </b> <a id="ctl00_MainContent_lnkAddedBy" href="https://www.dotnetcurry.com/Author.aspx?AuthorName=Ravi%20Kiran">Ravi Kiran</a> , 
+                    on 4/4/2018, 
+                    in <b> Category </b> <a id="ctl00_MainContent_lnkCategory" href="https://www.dotnetcurry.com/BrowseArticles.aspx?CatID=88">ASP.NET Core</a> 
+                    <br>
+            </div>
+       
+            <div class="articlestats">
+                    <div class="stats1">
+                        <b>Views: </b>
+                    34694   <br>   
+                    </div> 
+            </div>
+
+            <div class="articleabstract">
+                <b>Abstract: </b> ASP.NET core now has good support for Angular development using Angular CLI. In this tutorial, build a simple CRUD application using the ASP.NET Core Angular CLI template.
+            </div>
+
+           <div class="socialshare"><div class="socialshare">
+                <a class="resp-sharing-button__link" id="fbsharelinktop" target="_blank" aria-label="" rel="nofollow" href="https://facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.dotnetcurry.com%2Fangularjs%2F1432%2Faspnet-core-apps-using-angular-cli-template">
+                  <div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+                    <svg version="1.1" x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve">
+                        <g>
+                            <path d="M18.768,7.465H14.5V5.56c0-0.896,0.594-1.105,1.012-1.105s2.988,0,2.988,0V0.513L14.171,0.5C10.244,0.5,9.5,3.438,9.5,5.32 v2.145h-3v4h3c0,5.212,0,12,0,12h5c0,0,0-6.85,0-12h3.851L18.768,7.465z"></path>
+                        </g>
+                    </svg>
+                      <span>316</span>
+                    </div>
+                  </div>
+                </a>
+
+                <a class="resp-sharing-button__link" id="twtsharelinktop" target="_blank" aria-label="" rel="nofollow" href="https://twitter.com/intent/tweet/?text=Building%20Angular%20Applications%20using%20ASP.NET%20Core%20Angular%20CLI%20Template%20%7C%20DotNetCurry&amp;url=https%3A%2F%2Fwww.dotnetcurry.com%2Fangularjs%2F1432%2Faspnet-core-apps-using-angular-cli-template">
+                  <div class="resp-sharing-button resp-sharing-button--twitter resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+                    <svg version="1.1" x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve">
+                        <g>
+                            <path d="M23.444,4.834c-0.814,0.363-1.5,0.375-2.228,0.016c0.938-0.562,0.981-0.957,1.32-2.019c-0.878,0.521-1.851,0.9-2.886,1.104 C18.823,3.053,17.642,2.5,16.335,2.5c-2.51,0-4.544,2.036-4.544,4.544c0,0.356,0.04,0.703,0.117,1.036 C8.132,7.891,4.783,6.082,2.542,3.332C2.151,4.003,1.927,4.784,1.927,5.617c0,1.577,0.803,2.967,2.021,3.782 C3.203,9.375,2.503,9.171,1.891,8.831C1.89,8.85,1.89,8.868,1.89,8.888c0,2.202,1.566,4.038,3.646,4.456 c-0.666,0.181-1.368,0.209-2.053,0.079c0.579,1.804,2.257,3.118,4.245,3.155C5.783,18.102,3.372,18.737,1,18.459 C3.012,19.748,5.399,20.5,7.966,20.5c8.358,0,12.928-6.924,12.928-12.929c0-0.198-0.003-0.393-0.012-0.588 C21.769,6.343,22.835,5.746,23.444,4.834z"></path>
+                        </g>
+                    </svg>
+                      <span>17</span>
+                    </div>
+                  </div>
+                </a>
+
+               <a class="resp-sharing-button__link" id="linkdinsharelinktop" target="_blank" aria-label="" rel="nofollow" href="https://www.linkedin.com/shareArticle?mini=true&amp;amp;url=https%3A%2F%2Fwww.dotnetcurry.com%2Fangularjs%2F1432%2Faspnet-core-apps-using-angular-cli-template&amp;title=Building%20Angular%20Applications%20using%20ASP.NET%20Core%20Angular%20CLI%20Template%20%7C%20DotNetCurry">
+                  <div class="resp-sharing-button resp-sharing-button--linkedin resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+                    <svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6.5 21.5h-5v-13h5v13zM4 6.5C2.5 6.5 1.5 5.3 1.5 4s1-2.4 2.5-2.4c1.6 0 2.5 1 2.6 2.5 0 1.4-1 2.5-2.6 2.5zm11.5 6c-1 0-2 1-2 2v7h-5v-13h5V10s1.6-1.5 4-1.5c3 0 5 2.2 5 6.3v6.7h-5v-7c0-1-1-2-2-2z"></path></svg>
+                    <span></span>
+                   </div>
+                  </div>
+                </a>
+
+                <!--<a class="resp-sharing-button__link" id="googsharelinktop" target="_blank" aria-label="">
+                  <div class="resp-sharing-button resp-sharing-button--google resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+                    <svg version="1.1" x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve">
+                        <g>
+                            <path d="M11.366,12.928c-0.729-0.516-1.393-1.273-1.404-1.505c0-0.425,0.038-0.627,0.988-1.368 c1.229-0.962,1.906-2.228,1.906-3.564c0-1.212-0.37-2.289-1.001-3.044h0.488c0.102,0,0.2-0.033,0.282-0.091l1.364-0.989 c0.169-0.121,0.24-0.338,0.176-0.536C14.102,1.635,13.918,1.5,13.709,1.5H7.608c-0.667,0-1.345,0.118-2.011,0.347 c-2.225,0.766-3.778,2.66-3.778,4.605c0,2.755,2.134,4.845,4.987,4.91c-0.056,0.22-0.084,0.434-0.084,0.645 c0,0.425,0.108,0.827,0.33,1.216c-0.026,0-0.051,0-0.079,0c-2.72,0-5.175,1.334-6.107,3.32C0.623,17.06,0.5,17.582,0.5,18.098 c0,0.501,0.129,0.984,0.382,1.438c0.585,1.046,1.843,1.861,3.544,2.289c0.877,0.223,1.82,0.335,2.8,0.335 c0.88,0,1.718-0.114,2.494-0.338c2.419-0.702,3.981-2.482,3.981-4.538C13.701,15.312,13.068,14.132,11.366,12.928z M3.66,17.443 c0-1.435,1.823-2.693,3.899-2.693h0.057c0.451,0.005,0.892,0.072,1.309,0.2c0.142,0.098,0.28,0.192,0.412,0.282 c0.962,0.656,1.597,1.088,1.774,1.783c0.041,0.175,0.063,0.35,0.063,0.519c0,1.787-1.333,2.693-3.961,2.693 C5.221,20.225,3.66,19.002,3.66,17.443z M5.551,3.89c0.324-0.371,0.75-0.566,1.227-0.566l0.055,0 c1.349,0.041,2.639,1.543,2.876,3.349c0.133,1.013-0.092,1.964-0.601,2.544C8.782,9.589,8.363,9.783,7.866,9.783H7.865H7.844 c-1.321-0.04-2.639-1.6-2.875-3.405C4.836,5.37,5.049,4.462,5.551,3.89z"/>
+                            <polygon points="23.5,9.5 20.5,9.5 20.5,6.5 18.5,6.5 18.5,9.5 15.5,9.5 15.5,11.5 18.5,11.5 18.5,14.5 20.5,14.5 20.5,11.5  23.5,11.5 	"/>
+                        </g>
+                    </svg>
+                    </div>
+                  </div>
+                </a>-->
+
+          </div></div>
+      </div>
+         
+      <div id="articleBody" class="col-md-12 row">
+        <p>Microsoft built ASP.NET core to make modern application development easier and efficient. ASP.NET core makes it possible to build and deploy .NET based server web applications across any of the major platforms available.</p>
+<p>On the other hand, front-end web is evolving very rapidly. The tooling to build front-end applications is getting matured to meet the developers’ needs. This brings up a challenge to the server platforms to support the front-end ecosystem inside their boundaries.</p>
+<blockquote>
+<p>Are you keeping up with new developer technologies? Advance your IT career with our Free Developer magazines covering Angular, React, .NET Core, MVC, Azure and more. <a href="https://www.dotnetcurry.com/magazine/" target="_blank"><strong>Subscribe to this magazine for FREE</strong></a> and download all previous, current and upcoming editions.</p>
+</blockquote>
+<p>The ASP.NET team has built Angular and React templates to support development of front-end based applications with ASP.NET core as the backend.</p>
+<p>The Angular team built <a href="https://www.dotnetcurry.com/angularjs/1409/angular-cli-tutorial">Angular CLI</a> to address the difficulties that developers face while setting up the environment to build a sophisticated web application. It reduces the time and effort required to generate a new Angular application. Using the commands it provides, one can generate an application, generate different code blocks of Angular, add unit test spec files, run tests, run the applications in development mode and generate build files to deploy the application.</p>
+<p>These features are hard to recreate. Anyone would love to have these features while working on Angular.</p>
+<p>So, the ASP.NET team released a new template by including <a href="https://www.dotnetcurry.com/angularjs/1409/angular-cli-tutorial">Angular CLI</a>. This template is still in RC at the time of this writing and is expected to be ready for production in a few months.</p>
+<p>This tutorial will show you how to create a simple CRUD based application using the ASP.NET core Angular template.</p>
+<p><img src="./Building Angular Applications using ASP.NET Core Angular CLI Template _ DotNetCurry_files/aspnetcore-angular.jpg" width="800" height="443" alt=""></p>
+<h2>Angular App with ASP.NET Core Angular CLI Template - System Setup</h2>
+<p>To follow along with this article and build the sample, your system should have the following software installed:</p>
+<p>- <a href="https://www.visualstudio.com/downloads/" rel="nofollow" target="_blank">Visual Studio 2017</a></p>
+<p>- <a href="https://www.microsoft.com/net/learn/get-started/windows" rel="nofollow" target="_blank">.NET core 2.0 or above</a></p>
+<p>- <a href="https://nodejs.org/en/" rel="nofollow" target="_blank">Node.js</a></p>
+<p>- Angular CLI: To be installed as a global npm package using the following command</p>
+<div><div id="highlighter_907508" class="syntaxhighlighter nogutter  ps"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="ps plain">&gt; npm install</code> <code class="ps color1">-g</code> <code class="ps variable">@angular</code><code class="ps plain">/cli</code><code class="ps variable">@latest</code></div></div></td></tr></tbody></table></div></div>
+<p>Angular CLI is installed using npm, so the system should have Node.js installed before the npm command is executed.</p>
+<p>The ASP.NET core Angular template to be used in this article is still a release candidate (RC) and it is not available on Visual Studio’s template dialog box. The template has to be installed using the following command:</p>
+<div><div id="highlighter_43536" class="syntaxhighlighter nogutter  ps"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="ps plain">&gt; dotnet new --install Microsoft.DotNet.Web.Spa.ProjectTemplates::2.0.0-rc1-final</code></div></div></td></tr></tbody></table></div></div>
+<p>Once these installations are complete, you can start using the new template to build applications.</p>
+<h4>&nbsp;</h4>
+<h3>Understanding the Application Structure</h3>
+<p>We are going to build a video tracker application. Using this application, one can enter his or her favorite set of videos with their links and can watch the video by clicking the link whenever he or she wants to watch it.</p>
+<p>At first, we need to get this project generated using the template. Open a command prompt, go to the folder where you want to place your code and run the following command:</p>
+<div><div id="highlighter_625641" class="syntaxhighlighter nogutter  ps"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="ps plain">&gt; dotnet new angular</code> <code class="ps color1">-o</code> <code class="ps plain">VideoTracker</code></div></div></td></tr></tbody></table></div></div>
+<p>This command will generate the web application containing ASP.NET core and Angular. The code gets added to a new folder named <i>VideoTracker. </i>This folder contains the <i>VideoTracker.csproj </i>file, open the project in Visual Studio 2017 using this file.</p>
+<p>The folder structure is shown in Figure 1.</p>
+<p><img title="angular-cli-folder-structure" border="0" alt="angular-cli-folder-structure" src="./Building Angular Applications using ASP.NET Core Angular CLI Template _ DotNetCurry_files/angular-cli-folder-structure.png" width="275" height="296"></p>
+<p><font size="2" face="Times New Roman">Figure 1 – Folder Structure</font></p>
+<p>The following listing describes the files and folders in the above screenshot:</p>
+<ul>
+    <li><i>ClientApp </i>folder contains the Angular CLI based front end application</li>
+    <li><i>Controllers </i>folder contains a sample controller with an API endpoint</li>
+    <li>The file<i> appsettings.json </i>contains some settings used by the ASP.NET core application</li>
+    <li>The <i>Program.cs </i>file has the <i>Main </i>method to start the application</li>
+    <li>The <i>Startup.cs </i>file sets up the services and middlewares for the ASP.NET core application</li>
+</ul>
+<p>The following screenshot shows structure of the <i>ClientApp </i>folder:</p>
+<p><img title="client-app-folder" border="0" alt="client-app-folder" src="./Building Angular Applications using ASP.NET Core Angular CLI Template _ DotNetCurry_files/client-app-folder.png" width="288" height="741"></p>
+<p><font size="2" face="Times New Roman">Figure 2 – Structure of ClientApp folder</font></p>
+<p>If you are familiar with the files generated by Angular CLI, most of the files in Figure 2 would look familiar to you. If not, read the <a href="https://www.dotnetcurry.com/angularjs/1409/angular-cli-tutorial">Angular CLI introduction</a> article to understand the structure.</p>
+<p>The <i>src </i>folder contains the front-end code that gets rendered on the browser. To build the Video Tracker application, we will modify the files inside the <i>src</i> folder.</p>
+<p>The following listing describes the vital parts of the <i>src </i>folder:</p>
+<p>- The file <i>main.ts </i>bootstraps the application</p>
+<p>- The file <i>app.module.ts </i>defines the Angular module of the application and configures the routes. The following snippet shows the modules imported and the route configuration added to <i>AppModule:</i></p>
+<div><div id="highlighter_942685" class="syntaxhighlighter nogutter  js"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="js plain">imports: [</code></div><div class="line number2 index1 alt1"><code class="js spaces">&nbsp;&nbsp;</code><code class="js plain">BrowserModule.withServerTransition({ appId: </code><code class="js string">'ng-cli-universal'</code> <code class="js plain">}),</code></div><div class="line number3 index2 alt2"><code class="js spaces">&nbsp;&nbsp;</code><code class="js plain">HttpClientModule,</code></div><div class="line number4 index3 alt1"><code class="js spaces">&nbsp;&nbsp;</code><code class="js plain">FormsModule,</code></div><div class="line number5 index4 alt2"><code class="js spaces">&nbsp;&nbsp;</code><code class="js plain">RouterModule.forRoot([</code></div><div class="line number6 index5 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">{ path: </code><code class="js string">''</code><code class="js plain">, component: HomeComponent, pathMatch: </code><code class="js string">'full'</code> <code class="js plain">},</code></div><div class="line number7 index6 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">{ path: </code><code class="js string">'counter'</code><code class="js plain">, component: CounterComponent },</code></div><div class="line number8 index7 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">{ path: </code><code class="js string">'fetch-data'</code><code class="js plain">, component: FetchDataComponent },</code></div><div class="line number9 index8 alt2"><code class="js spaces">&nbsp;&nbsp;</code><code class="js plain">])</code></div><div class="line number10 index9 alt1"><code class="js plain">]</code></div></div></td></tr></tbody></table></div></div>
+<p>Notice the <i>BrowserModule </i>in the imports array. Call to the method <i>withServerTransition </i>is made to support server-side rendering of the Angular application. The application has three routes configured.</p>
+<p>- The <i>AppComponent </i>in the file <i>app.component.ts </i>contains the <i>router-outlet </i>component, which is the placeholder to display the routes. It uses the <i>NavMenuComponent </i>to show the menu items that help to navigate between the routes.</p>
+<p>- The components supplied to the routes carry out simple tasks. The <i>HomeComponent </i>has a static HTML template displaying some information about ASP.NET core, Angular, Bootstrap and the template. The <i>CounterComponent </i>has a basic data binding example. The <i>FetchDataComponent </i>makes a call to the sample API added in the project and displays the result in a table.</p>
+<p>To run any Angular CLI commands to generate the new angular code files, you can open a command prompt in the <i>ClientApp </i>folder and run the command there. This will be covered later in this article.</p>
+<p>The <i>Startup.cs </i>file contains the configuration to start the client application from the <i>ClientApp</i> folder. To run the application in development mode, it uses the “npm start” script configured in the client application. The “npm start” script uses the “ng serve” command in turn to start the Angular application in development mode. The following snippet in the <i>Configure </i>method does this:</p>
+<div><div id="highlighter_600793" class="syntaxhighlighter nogutter  js"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="js plain">app.UseSpa(spa =&gt;</code></div><div class="line number2 index1 alt1"><code class="js plain">{</code></div><div class="line number3 index2 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js comments">// To learn more about options for serving an Angular SPA from ASP.NET Core,</code></div><div class="line number4 index3 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js comments">// see https://go.microsoft.com/fwlink/?linkid=864501</code></div><div class="line number5 index4 alt2">&nbsp;</div><div class="line number6 index5 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">spa.Options.SourcePath = </code><code class="js string">"ClientApp"</code><code class="js plain">;</code></div><div class="line number7 index6 alt2">&nbsp;</div><div class="line number8 index7 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js keyword">if</code> <code class="js plain">(env.IsDevelopment())</code></div><div class="line number9 index8 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">{</code></div><div class="line number10 index9 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">spa.UseAngularCliServer(npmScript: </code><code class="js string">"start"</code><code class="js plain">);</code></div><div class="line number11 index10 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">}</code></div><div class="line number12 index11 alt1"><code class="js plain">});</code></div></div></td></tr></tbody></table></div></div>
+<p>While running the application in production mode, it takes the static files from <i>ClientApp/dist </i>folder. This is because the Angular CLI spits out the bundled static files inside this folder. The following snippet in the <i>ConfigureServices </i>method of the <i>Startup </i>class does this:</p>
+<div><div id="highlighter_356644" class="syntaxhighlighter nogutter  csharp"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="csharp comments">// In production, the Angular files will be served from this directory</code></div><div class="line number2 index1 alt1"><code class="csharp plain">services.AddSpaStaticFiles(configuration =&gt;</code></div><div class="line number3 index2 alt2"><code class="csharp plain">{</code></div><div class="line number4 index3 alt1"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">configuration.RootPath = </code><code class="csharp string">"ClientApp/dist"</code><code class="csharp plain">;</code></div><div class="line number5 index4 alt2"><code class="csharp plain">});</code></div></div></td></tr></tbody></table></div></div>
+<p>Build the project using Build menu or by pressing Ctrl+Shift+B. This will take a couple of minutes, as it is going to install the npm packages added to the Angular application. Once the build completes, run it using Ctrl+F5. You will see a bootstrap based Angular application loaded in the browser.</p>
+<p><img title="aspnet-core-angular-app" border="0" alt="aspnet-core-angular-app" src="./Building Angular Applications using ASP.NET Core Angular CLI Template _ DotNetCurry_files/aspnet-core-angular-app.png" width="628" height="358"></p>
+<p><font size="2" face="Times New Roman">Figure 3 – Running instance of generated application</font></p>
+<p>As you see, the generated application has three pages. They are registered as Angular routes. The Counter page shows how data binding works in Angular with a number incrementing on click of a button. And the Fetch Data page calls the sample API in the application to fetch some data and displays it in a table.</p>
+<h3>Adding Database and Building API</h3>
+<p>Now that we understood the structure and the way the application works, let’s modify it to build the video tracker. Let’s get the database and the API ready to serve the data. We will create the database using Entity Framework Core.</p>
+<p>Add a folder named <i>Model </i>to the project. Add a new C# class file to this folder and name it <i>Video.cs. </i>Change contents of the file as follows:</p>
+<div><div id="highlighter_113579" class="syntaxhighlighter nogutter  csharp"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="csharp keyword">namespace</code> <code class="csharp plain">VideoTracker.Model</code></div><div class="line number2 index1 alt1"><code class="csharp plain">{</code></div><div class="line number3 index2 alt2"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp keyword">public</code> <code class="csharp keyword">class</code> <code class="csharp plain">Video</code></div><div class="line number4 index3 alt1"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">{</code></div><div class="line number5 index4 alt2"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp keyword">public</code> <code class="csharp keyword">int</code> <code class="csharp plain">ID { </code><code class="csharp keyword">get</code><code class="csharp plain">; </code><code class="csharp keyword">set</code><code class="csharp plain">; }</code></div><div class="line number6 index5 alt1"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp keyword">public</code> <code class="csharp keyword">string</code> <code class="csharp plain">Title { </code><code class="csharp keyword">get</code><code class="csharp plain">; </code><code class="csharp keyword">set</code><code class="csharp plain">; }</code></div><div class="line number7 index6 alt2"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp keyword">public</code> <code class="csharp keyword">string</code> <code class="csharp plain">Link { </code><code class="csharp keyword">get</code><code class="csharp plain">; </code><code class="csharp keyword">set</code><code class="csharp plain">; }</code></div><div class="line number8 index7 alt1"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp keyword">public</code> <code class="csharp keyword">bool</code> <code class="csharp plain">Watched { </code><code class="csharp keyword">get</code><code class="csharp plain">; </code><code class="csharp keyword">set</code><code class="csharp plain">; }</code></div><div class="line number9 index8 alt2"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp keyword">public</code> <code class="csharp keyword">string</code> <code class="csharp plain">Genre { </code><code class="csharp keyword">get</code><code class="csharp plain">; </code><code class="csharp keyword">set</code><code class="csharp plain">; }</code></div><div class="line number10 index9 alt1"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">}</code></div><div class="line number11 index10 alt2"><code class="csharp plain">}</code></div></div></td></tr></tbody></table></div></div>
+<p>Add another file to the <i>Model </i>folder and name it <i>VideoTrackerContext. </i>This class will be the DbContext class for the database we are going to create. Open this file and replace it with the following code:</p>
+<div><div id="highlighter_53854" class="syntaxhighlighter nogutter  csharp"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="csharp keyword">using</code> <code class="csharp plain">Microsoft.EntityFrameworkCore;</code></div><div class="line number2 index1 alt1">&nbsp;</div><div class="line number3 index2 alt2"><code class="csharp keyword">namespace</code> <code class="csharp plain">VideoTracker.Model</code></div><div class="line number4 index3 alt1"><code class="csharp plain">{</code></div><div class="line number5 index4 alt2"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp keyword">public</code> <code class="csharp keyword">class</code> <code class="csharp plain">VideoTrackerContext: DbContext</code></div><div class="line number6 index5 alt1"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">{</code></div><div class="line number7 index6 alt2"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp keyword">public</code> <code class="csharp plain">VideoTrackerContext(DbContextOptions&lt;VideoTrackerContext&gt; options)</code></div><div class="line number8 index7 alt1"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">:</code><code class="csharp keyword">base</code><code class="csharp plain">(options)</code></div><div class="line number9 index8 alt2"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">{</code></div><div class="line number10 index9 alt1"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">}</code></div><div class="line number11 index10 alt2">&nbsp;</div><div class="line number12 index11 alt1"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp keyword">public</code> <code class="csharp plain">DbSet&lt;Video&gt; Videos { </code><code class="csharp keyword">get</code><code class="csharp plain">; </code><code class="csharp keyword">set</code><code class="csharp plain">; }</code></div><div class="line number13 index12 alt2"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">}</code></div><div class="line number14 index13 alt1"><code class="csharp plain">}</code></div></div></td></tr></tbody></table></div></div>
+<p>Open the file <i>appsettings.json </i>and add the following connection string to it:</p>
+<div><div id="highlighter_777397" class="syntaxhighlighter nogutter  js"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="js string">"ConnectionStrings"</code><code class="js plain">: {</code></div><div class="line number2 index1 alt1"><code class="js spaces">&nbsp;&nbsp;</code><code class="js string">"VideoTrackerContext"</code><code class="js plain">: </code><code class="js string">"Server=(localdb)\\mssqllocaldb;Database=VideoTrackerDb;Trusted_Connection=True;MultipleActiveResultSets=true"</code></div><div class="line number3 index2 alt2"><code class="js plain">}</code></div></div></td></tr></tbody></table></div></div>
+<p>The <font face="Consolas">DbContext</font> class has to be registered in the services of the application. To do so, add the following snippet to the <i>ConfigureServices </i>method of the <i>Startup</i> class:</p>
+<div><div id="highlighter_925943" class="syntaxhighlighter nogutter  csharp"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="csharp plain">services.AddDbContext&lt;VideoTrackerContext&gt;(options =&gt;</code></div><div class="line number2 index1 alt1"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">options.UseSqlServer(Configuration.GetConnectionString(</code><code class="csharp string">"VideoTrackerContext"</code><code class="csharp plain">)));</code></div></div></td></tr></tbody></table></div></div>
+<p>Now we have the connection string, model class and the context class ready.</p>
+<p>To create the database and seed some data into it, we need to add EF Core migrations. Migrations need a context factory class. Add a new C# class to the <i>Model </i>folder and name it <i>VideoContextFactory.cs. </i>Place the following code inside this file:</p>
+<div><div id="highlighter_959948" class="syntaxhighlighter nogutter  csharp"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="csharp keyword">using</code> <code class="csharp plain">Microsoft.EntityFrameworkCore;</code></div><div class="line number2 index1 alt1"><code class="csharp keyword">using</code> <code class="csharp plain">Microsoft.EntityFrameworkCore.Design;</code></div><div class="line number3 index2 alt2"><code class="csharp keyword">using</code> <code class="csharp plain">Microsoft.Extensions.Configuration;</code></div><div class="line number4 index3 alt1"><code class="csharp keyword">using</code> <code class="csharp plain">System.IO;</code></div><div class="line number5 index4 alt2">&nbsp;</div><div class="line number6 index5 alt1"><code class="csharp keyword">namespace</code> <code class="csharp plain">VideoTracker.Model</code></div><div class="line number7 index6 alt2"><code class="csharp plain">{</code></div><div class="line number8 index7 alt1"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp keyword">public</code> <code class="csharp keyword">class</code> <code class="csharp plain">VideoContextFactory : IDesignTimeDbContextFactory&lt;VideoTrackerContext&gt;</code></div><div class="line number9 index8 alt2"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">{</code></div><div class="line number10 index9 alt1"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp keyword">public</code> <code class="csharp plain">VideoTrackerContext CreateDbContext(</code><code class="csharp keyword">string</code><code class="csharp plain">[] args)</code></div><div class="line number11 index10 alt2"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">{</code></div><div class="line number12 index11 alt1"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">IConfigurationRoot configuration = </code><code class="csharp keyword">new</code> <code class="csharp plain">ConfigurationBuilder()</code></div><div class="line number13 index12 alt2"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">.SetBasePath(Directory.GetCurrentDirectory())</code></div><div class="line number14 index13 alt1"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">.AddJsonFile(</code><code class="csharp string">"appsettings.json"</code><code class="csharp plain">)</code></div><div class="line number15 index14 alt2"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">.Build();</code></div><div class="line number16 index15 alt1"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">var optionsBuilder = </code><code class="csharp keyword">new</code> <code class="csharp plain">DbContextOptionsBuilder&lt;VideoTrackerContext&gt;();</code></div><div class="line number17 index16 alt2"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">optionsBuilder.UseSqlServer(configuration.GetConnectionString(</code><code class="csharp string">"VideoTrackerContext"</code><code class="csharp plain">));</code></div><div class="line number18 index17 alt1">&nbsp;</div><div class="line number19 index18 alt2"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp keyword">return</code> <code class="csharp keyword">new</code> <code class="csharp plain">VideoTrackerContext(optionsBuilder.Options);</code></div><div class="line number20 index19 alt1"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">}</code></div><div class="line number21 index20 alt2"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">}</code></div><div class="line number22 index21 alt1"><code class="csharp plain">}</code></div></div></td></tr></tbody></table></div></div>
+<p>To access the database created, we need <i>Microsoft.EntityFrameworkCore.Tools </i>package and need to run migration commands in the package manager console. Open the Package Manager Console in Visual Studio and run the following commands in the given order:</p>
+<div><div id="highlighter_635770" class="syntaxhighlighter nogutter  ps"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="ps plain">&gt; Install-Package Microsoft.EntityFrameworkCore.Tools</code></div><div class="line number2 index1 alt1"><code class="ps plain">&gt; </code><code class="ps functions">Add-Migration</code> <code class="ps plain">Initial</code></div><div class="line number3 index2 alt2"><code class="ps plain">&gt; </code><code class="ps functions">Update-Database</code></div></div></td></tr></tbody></table></div></div>
+<p>Once these commands are successful, you will have access to the database and the table created. You can see the database in the SQL Server Object Explorer. It will have the Videos table created with the five columns as specified in the <i>Video </i>class earlier.</p>
+<p>Let’s add some data to this table, so that we can see the data in response to the APIs.</p>
+<p>Add a new file to the <i>Model </i>folder and name it <i>Seed.cs. </i>Add the following code to it:</p>
+<div><div id="highlighter_271008" class="syntaxhighlighter nogutter  csharp"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="csharp keyword">using</code> <code class="csharp plain">Microsoft.EntityFrameworkCore;</code></div><div class="line number2 index1 alt1"><code class="csharp keyword">using</code> <code class="csharp plain">Microsoft.Extensions.DependencyInjection;</code></div><div class="line number3 index2 alt2"><code class="csharp keyword">using</code> <code class="csharp plain">System;</code></div><div class="line number4 index3 alt1"><code class="csharp keyword">using</code> <code class="csharp plain">System.Linq;</code></div><div class="line number5 index4 alt2">&nbsp;</div><div class="line number6 index5 alt1"><code class="csharp keyword">namespace</code> <code class="csharp plain">VideoTracker.Model</code></div><div class="line number7 index6 alt2"><code class="csharp plain">{</code></div><div class="line number8 index7 alt1"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp keyword">public</code> <code class="csharp keyword">class</code> <code class="csharp plain">Seed</code></div><div class="line number9 index8 alt2"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">{</code></div><div class="line number10 index9 alt1"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp keyword">public</code> <code class="csharp keyword">static</code> <code class="csharp keyword">void</code> <code class="csharp plain">Initialize(IServiceProvider serviceProvider)</code></div><div class="line number11 index10 alt2"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">{</code></div><div class="line number12 index11 alt1"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp keyword">using</code> <code class="csharp plain">(var context = </code><code class="csharp keyword">new</code> <code class="csharp plain">VideoTrackerContext(</code></div><div class="line number13 index12 alt2"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">serviceProvider.GetRequiredService&lt;DbContextOptions&lt;VideoTrackerContext&gt;&gt;()))</code></div><div class="line number14 index13 alt1"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">{</code></div><div class="line number15 index14 alt2"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp comments">// Look for any movies.</code></div><div class="line number16 index15 alt1"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp keyword">if</code> <code class="csharp plain">(context.Videos.Any())</code></div><div class="line number17 index16 alt2"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">{</code></div><div class="line number18 index17 alt1"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp keyword">return</code><code class="csharp plain">;&nbsp;&nbsp; </code><code class="csharp comments">// DB has been seeded</code></div><div class="line number19 index18 alt2"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">}</code></div><div class="line number20 index19 alt1">&nbsp;</div><div class="line number21 index20 alt2"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">context.Videos.AddRange(</code></div><div class="line number22 index21 alt1"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp keyword">new</code> <code class="csharp plain">Video</code></div><div class="line number23 index22 alt2"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">{</code></div><div class="line number24 index23 alt1"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">Title = </code><code class="csharp string">"Raghuvamsa Sudha"</code><code class="csharp plain">,</code></div><div class="line number25 index24 alt2"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">Link = </code><code class="csharp string">"https://www.youtube.com/watch?v=l89ZaBqYiTA"</code><code class="csharp plain">,</code></div><div class="line number26 index25 alt1"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">Genre = </code><code class="csharp string">"Music"</code><code class="csharp plain">,</code></div><div class="line number27 index26 alt2"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">Watched= </code><code class="csharp keyword">true</code></div><div class="line number28 index27 alt1"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">},</code></div><div class="line number29 index28 alt2"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp keyword">new</code> <code class="csharp plain">Video</code></div><div class="line number30 index29 alt1"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">{</code></div><div class="line number31 index30 alt2"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">Title = </code><code class="csharp string">"Kapil finds a match for Sarla"</code><code class="csharp plain">,</code></div><div class="line number32 index31 alt1"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">Link = </code><code class="csharp string">"https://www.youtube.com/watch?v=GfHEPKgkkpw"</code><code class="csharp plain">,</code></div><div class="line number33 index32 alt2"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">Genre = </code><code class="csharp string">"Comedy"</code><code class="csharp plain">,</code></div><div class="line number34 index33 alt1"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">Watched = </code><code class="csharp keyword">true</code></div><div class="line number35 index34 alt2"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">},</code></div><div class="line number36 index35 alt1"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp keyword">new</code> <code class="csharp plain">Video</code></div><div class="line number37 index36 alt2"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">{</code></div><div class="line number38 index37 alt1"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">Title = </code><code class="csharp string">"Arvind Gupta TED Talk"</code><code class="csharp plain">,</code></div><div class="line number39 index38 alt2"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">Link = </code><code class="csharp string">"https://www.youtube.com/watch?v=KnCqR2yUXoU"</code><code class="csharp plain">,</code></div><div class="line number40 index39 alt1"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">Genre = </code><code class="csharp string">"Inspirational"</code><code class="csharp plain">,</code></div><div class="line number41 index40 alt2"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">Watched = </code><code class="csharp keyword">true</code></div><div class="line number42 index41 alt1"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">},</code></div><div class="line number43 index42 alt2"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp keyword">new</code> <code class="csharp plain">Video</code></div><div class="line number44 index43 alt1"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">{</code></div><div class="line number45 index44 alt2"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">Title = </code><code class="csharp string">"Event Loop - Philip Roberts"</code><code class="csharp plain">,</code></div><div class="line number46 index45 alt1"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">Link = </code><code class="csharp string">"https://www.youtube.com/watch?v=8aGhZQkoFbQ"</code><code class="csharp plain">,</code></div><div class="line number47 index46 alt2"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">Genre = </code><code class="csharp string">"Tech"</code><code class="csharp plain">,</code></div><div class="line number48 index47 alt1"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">Watched = </code><code class="csharp keyword">true</code></div><div class="line number49 index48 alt2"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">}</code></div><div class="line number50 index49 alt1"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">);</code></div><div class="line number51 index50 alt2"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">context.SaveChanges();</code></div><div class="line number52 index51 alt1"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">}</code></div><div class="line number53 index52 alt2"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">}</code></div><div class="line number54 index53 alt1"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">}</code></div><div class="line number55 index54 alt2"><code class="csharp plain">}</code></div></div></td></tr></tbody></table></div></div>
+<p>The <i>Initialize</i> method of the <i>Seed </i>class has to be called as soon as the application starts. Modify the <i>Main </i>method in the <i>Program.cs </i>file as follows:</p>
+<div><div id="highlighter_401950" class="syntaxhighlighter nogutter  csharp"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="csharp keyword">public</code> <code class="csharp keyword">static</code> <code class="csharp keyword">void</code> <code class="csharp plain">Main(</code><code class="csharp keyword">string</code><code class="csharp plain">[] args)</code></div><div class="line number2 index1 alt1"><code class="csharp plain">{</code></div><div class="line number3 index2 alt2"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp comments">// Creaying a host based on the Startup class</code></div><div class="line number4 index3 alt1"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">var host = CreateWebHostBuilder(args).Build();</code></div><div class="line number5 index4 alt2">&nbsp;</div><div class="line number6 index5 alt1"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp comments">// Creating a scope for the application</code></div><div class="line number7 index6 alt2"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp keyword">using</code> <code class="csharp plain">(var scope = host.Services.CreateScope())</code></div><div class="line number8 index7 alt1"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">{</code></div><div class="line number9 index8 alt2"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp comments">// Getting service provider to resolve dependencies</code></div><div class="line number10 index9 alt1"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">var services = scope.ServiceProvider;</code></div><div class="line number11 index10 alt2">&nbsp;</div><div class="line number12 index11 alt1"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp keyword">try</code></div><div class="line number13 index12 alt2"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">{</code></div><div class="line number14 index13 alt1"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp comments">// Initializing the database</code></div><div class="line number15 index14 alt2"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">Seed.Initialize(services);</code></div><div class="line number16 index15 alt1"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">}</code></div><div class="line number17 index16 alt2"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp keyword">catch</code> <code class="csharp plain">(Exception ex)</code></div><div class="line number18 index17 alt1"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">{</code></div><div class="line number19 index18 alt2"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">var logger = services.GetRequiredService&lt;ILogger&lt;Program&gt;&gt;();</code></div><div class="line number20 index19 alt1"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">logger.LogError(ex, </code><code class="csharp string">"An error occurred seeding the DB."</code><code class="csharp plain">);</code></div><div class="line number21 index20 alt2"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">}</code></div><div class="line number22 index21 alt1"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">}</code></div><div class="line number23 index22 alt2">&nbsp;</div><div class="line number24 index23 alt1"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">host.Run();</code></div><div class="line number25 index24 alt2"><code class="csharp plain">}</code></div></div></td></tr></tbody></table></div></div>
+<p>If you run the application after saving the above changes, the data would be inserted to the Videos table.</p>
+<p>As the database is ready with some data, let’s add the API. Right click on the <i>Controllers </i>folder and choose Add &gt; Controller. From the menu, choose API Controller with actions using Entity Framework.</p>
+<p><img title="add-control-dialog" border="0" alt="add-control-dialog" src="./Building Angular Applications using ASP.NET Core Angular CLI Template _ DotNetCurry_files/add-control-dialog.png" width="628" height="437"></p>
+<p><font size="2" face="Times New Roman">Figure 4 – Add control dialog</font></p>
+<p>Click on the add button after choosing the option. This will show another prompt asking for the details of the model and the context class. Change the values as follows:</p>
+<p><img title="controller-action-dialog" border="0" alt="controller-action-dialog" src="./Building Angular Applications using ASP.NET Core Angular CLI Template _ DotNetCurry_files/controller-action-dialog.png" width="628" height="225"></p>
+<p><font size="2" face="Times New Roman">Figure 5 – Controller with actions dialog</font></p>
+<p>Once you hit the add button, it will create the <i>ValuesController </i>performing CRUD operations on the <i>Videos </i>table. We don’t need to make any changes to this file, we can use it as is. Run the application and change the URL in the browser to http://localhost:&lt;port-no&gt;/api/Videos. This will display the set of videos added to the table. See Figure 6.</p>
+<p><img title="videos-api-output" border="0" alt="videos-api-output" src="./Building Angular Applications using ASP.NET Core Angular CLI Template _ DotNetCurry_files/videos-api-output.png" width="583" height="621"></p>
+<p><font size="2" face="Times New Roman">Figure 6 – Output of the videos API</font></p>
+<h3>Building Video Tracker Client App</h3>
+<p>As stated earlier, we need to modify the <i>ClientApp/src </i>folder to build the client part of the application. The application needs two views, one to display the list of videos and the other to add a new video. The Angular components required for these views can be generated using the Angular CLI commands. Open a command prompt and move to the <i>ClientApp </i>folder. Run the following commands to get the components generated:</p>
+<div><div id="highlighter_966615" class="syntaxhighlighter nogutter  ps"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="ps plain">&gt; ng generate component video-list</code></div><div class="line number2 index1 alt1"><code class="ps plain">&gt; ng generate component </code><code class="ps functions">add-video</code></div></div></td></tr></tbody></table></div></div>
+<p>Angular CLI provides shorter versions of these commands to ease the usage. The command to generate the <i>video-list </i>component can be replaced with the following:</p>
+<div><div id="highlighter_218109" class="syntaxhighlighter nogutter  ps"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="ps plain">&gt; ng g c video-list</code></div></div></td></tr></tbody></table></div></div>
+<p>These commands add components with their basic skeleton and register them in the <i>AppModule</i>. These components have to be registered as routes, so that we can access them as Angular views.</p>
+<p>As we will be using these components going forward, it is better to remove the components that were added by the template. Open the file <i>app.module.ts </i>and change the code in the file as shown in the following snippet:</p>
+<div><div id="highlighter_873734" class="syntaxhighlighter nogutter  js"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="js plain">import { BrowserModule } from </code><code class="js string">'@angular/platform-browser'</code><code class="js plain">;</code></div><div class="line number2 index1 alt1"><code class="js plain">import { NgModule, InjectionToken } from </code><code class="js string">'@angular/core'</code><code class="js plain">;</code></div><div class="line number3 index2 alt2"><code class="js plain">import { FormsModule } from </code><code class="js string">'@angular/forms'</code><code class="js plain">;</code></div><div class="line number4 index3 alt1"><code class="js plain">import { HttpClientModule } from </code><code class="js string">'@angular/common/http'</code><code class="js plain">;</code></div><div class="line number5 index4 alt2"><code class="js plain">import { RouterModule } from </code><code class="js string">'@angular/router'</code><code class="js plain">;</code></div><div class="line number6 index5 alt1">&nbsp;</div><div class="line number7 index6 alt2"><code class="js plain">import { AppComponent } from </code><code class="js string">'./app.component'</code><code class="js plain">;</code></div><div class="line number8 index7 alt1"><code class="js plain">import { NavMenuComponent } from </code><code class="js string">'./nav-menu/nav-menu.component'</code><code class="js plain">;</code></div><div class="line number9 index8 alt2"><code class="js plain">import { VideoListComponent } from </code><code class="js string">'./video-list/video-list.component'</code><code class="js plain">;</code></div><div class="line number10 index9 alt1"><code class="js plain">import { AddVideoComponent } from </code><code class="js string">'./add-video/add-video.component'</code><code class="js plain">;</code></div><div class="line number11 index10 alt2">&nbsp;</div><div class="line number12 index11 alt1"><code class="js plain">@NgModule({</code></div><div class="line number13 index12 alt2"><code class="js spaces">&nbsp;&nbsp;</code><code class="js plain">declarations: [</code></div><div class="line number14 index13 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">AppComponent,</code></div><div class="line number15 index14 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">NavMenuComponent,</code></div><div class="line number16 index15 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">VideoListComponent,</code></div><div class="line number17 index16 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">AddVideoComponent</code></div><div class="line number18 index17 alt1"><code class="js spaces">&nbsp;&nbsp;</code><code class="js plain">],</code></div><div class="line number19 index18 alt2"><code class="js spaces">&nbsp;&nbsp;</code><code class="js plain">imports: [</code></div><div class="line number20 index19 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">BrowserModule.withServerTransition({ appId: </code><code class="js string">'ng-cli-universal'</code> <code class="js plain">}),</code></div><div class="line number21 index20 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">HttpClientModule,</code></div><div class="line number22 index21 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">FormsModule,</code></div><div class="line number23 index22 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">RouterModule.forRoot([</code></div><div class="line number24 index23 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">{ path: </code><code class="js string">''</code><code class="js plain">, component: VideoListComponent, pathMatch: </code><code class="js string">'full'</code> <code class="js plain">},</code></div><div class="line number25 index24 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">{ path: </code><code class="js string">'addvideo'</code><code class="js plain">, component: AddVideoComponent }</code></div><div class="line number26 index25 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">])</code></div><div class="line number27 index26 alt2"><code class="js spaces">&nbsp;&nbsp;</code><code class="js plain">],</code></div><div class="line number28 index27 alt1"><code class="js spaces">&nbsp;&nbsp;</code><code class="js plain">bootstrap: [AppComponent]</code></div><div class="line number29 index28 alt2"><code class="js plain">})</code></div><div class="line number30 index29 alt1"><code class="js plain">export class AppModule { }</code></div></div></td></tr></tbody></table></div></div>
+<p>Now this file is free from the components added by the template and it registers the new components in the routes.</p>
+<p>The navigation menu still points to the old routes. Let’s change it to use the new routes there. Open the file <i>nav-menu.component.html </i>and change the code of this file as follows:</p>
+<div><div id="highlighter_770917" class="syntaxhighlighter nogutter  xml"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="xml plain">&lt;</code><code class="xml keyword">div</code> <code class="xml color1">class</code><code class="xml plain">=</code><code class="xml string">'main-nav'</code><code class="xml plain">&gt;</code></div><div class="line number2 index1 alt1"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">div</code> <code class="xml color1">class</code><code class="xml plain">=</code><code class="xml string">'navbar navbar-inverse'</code><code class="xml plain">&gt;</code></div><div class="line number3 index2 alt2"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">div</code> <code class="xml color1">class</code><code class="xml plain">=</code><code class="xml string">'navbar-header'</code><code class="xml plain">&gt;</code></div><div class="line number4 index3 alt1"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">button</code> <code class="xml color1">type</code><code class="xml plain">=</code><code class="xml string">'button'</code> <code class="xml color1">class</code><code class="xml plain">=</code><code class="xml string">'navbar-toggle'</code> <code class="xml color1">data-toggle</code><code class="xml plain">=</code><code class="xml string">'collapse'</code> <code class="xml color1">data-target</code><code class="xml plain">=</code><code class="xml string">'.navbar-collapse'</code> <code class="xml plain">[attr.aria-expanded]='isExpanded' (click)='toggle()'&gt;</code></div><div class="line number5 index4 alt2"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">span</code> <code class="xml color1">class</code><code class="xml plain">=</code><code class="xml string">'sr-only'</code><code class="xml plain">&gt;Toggle navigation&lt;/</code><code class="xml keyword">span</code><code class="xml plain">&gt;</code></div><div class="line number6 index5 alt1"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">span</code> <code class="xml color1">class</code><code class="xml plain">=</code><code class="xml string">'icon-bar'</code><code class="xml plain">&gt;&lt;/</code><code class="xml keyword">span</code><code class="xml plain">&gt;</code></div><div class="line number7 index6 alt2"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">span</code> <code class="xml color1">class</code><code class="xml plain">=</code><code class="xml string">'icon-bar'</code><code class="xml plain">&gt;&lt;/</code><code class="xml keyword">span</code><code class="xml plain">&gt;</code></div><div class="line number8 index7 alt1"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">span</code> <code class="xml color1">class</code><code class="xml plain">=</code><code class="xml string">'icon-bar'</code><code class="xml plain">&gt;&lt;/</code><code class="xml keyword">span</code><code class="xml plain">&gt;</code></div><div class="line number9 index8 alt2"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;/</code><code class="xml keyword">button</code><code class="xml plain">&gt;</code></div><div class="line number10 index9 alt1"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">a</code> <code class="xml color1">class</code><code class="xml plain">=</code><code class="xml string">'navbar-brand'</code> <code class="xml plain">[routerLink]='["/"]'&gt;VideoTracker&lt;/</code><code class="xml keyword">a</code><code class="xml plain">&gt;</code></div><div class="line number11 index10 alt2"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;/</code><code class="xml keyword">div</code><code class="xml plain">&gt;</code></div><div class="line number12 index11 alt1"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">div</code> <code class="xml color1">class</code><code class="xml plain">=</code><code class="xml string">'clearfix'</code><code class="xml plain">&gt;&lt;/</code><code class="xml keyword">div</code><code class="xml plain">&gt;</code></div><div class="line number13 index12 alt2"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">div</code> <code class="xml color1">class</code><code class="xml plain">=</code><code class="xml string">'navbar-collapse collapse'</code> <code class="xml plain">[ngClass]='{ "in": isExpanded }'&gt;</code></div><div class="line number14 index13 alt1"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">ul</code> <code class="xml color1">class</code><code class="xml plain">=</code><code class="xml string">'nav navbar-nav'</code><code class="xml plain">&gt;</code></div><div class="line number15 index14 alt2"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">li</code> <code class="xml plain">[routerLinkActive]='["link-active"]' [routerLinkActiveOptions]='{ exact: true }'&gt;</code></div><div class="line number16 index15 alt1"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">a</code> <code class="xml plain">[routerLink]='["/"]' (click)='collapse()'&gt;</code></div><div class="line number17 index16 alt2"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">span</code> <code class="xml color1">class</code><code class="xml plain">=</code><code class="xml string">'glyphicon glyphicon-home'</code><code class="xml plain">&gt;&lt;/</code><code class="xml keyword">span</code><code class="xml plain">&gt; Video List</code></div><div class="line number18 index17 alt1"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;/</code><code class="xml keyword">a</code><code class="xml plain">&gt;</code></div><div class="line number19 index18 alt2"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;/</code><code class="xml keyword">li</code><code class="xml plain">&gt;</code></div><div class="line number20 index19 alt1"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">li</code> <code class="xml plain">[routerLinkActive]='["link-active"]'&gt;</code></div><div class="line number21 index20 alt2"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">a</code> <code class="xml plain">[routerLink]='["/addvideo"]' (click)='collapse()'&gt;</code></div><div class="line number22 index21 alt1"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">span</code> <code class="xml color1">class</code><code class="xml plain">=</code><code class="xml string">'glyphicon glyphicon-plus'</code><code class="xml plain">&gt;&lt;/</code><code class="xml keyword">span</code><code class="xml plain">&gt; Add Video</code></div><div class="line number23 index22 alt2"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;/</code><code class="xml keyword">a</code><code class="xml plain">&gt;</code></div><div class="line number24 index23 alt1"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;/</code><code class="xml keyword">li</code><code class="xml plain">&gt;</code></div><div class="line number25 index24 alt2"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;/</code><code class="xml keyword">ul</code><code class="xml plain">&gt;</code></div><div class="line number26 index25 alt1"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;/</code><code class="xml keyword">div</code><code class="xml plain">&gt;</code></div><div class="line number27 index26 alt2"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;/</code><code class="xml keyword">div</code><code class="xml plain">&gt;</code></div><div class="line number28 index27 alt1"><code class="xml plain">&lt;/</code><code class="xml keyword">div</code><code class="xml plain">&gt;</code></div></div></td></tr></tbody></table></div></div>
+<p>Save these changes and run the application. You will see the new menu items in the menu bar as shown in Figure 7:</p>
+<p><img title="new-menu-items" border="0" alt="new-menu-items" src="./Building Angular Applications using ASP.NET Core Angular CLI Template _ DotNetCurry_files/new-menu-items.png" width="344" height="189"></p>
+<p><font size="2" face="Times New Roman">Figure 7 – Application with new menu items</font></p>
+<p>Before modifying the components to show the new views, let’s create a service to interact with the backend. The reason behind creating a service to perform the data operations is to keep the components focused on building data required for its view alone. Also, as the service would be available to all the components in the application, anyone can use it without having to repeat the logic. Run the following command to generate the service:</p>
+<div><div id="highlighter_650106" class="syntaxhighlighter nogutter  ps"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="ps plain">&gt; ng g s videos</code> <code class="ps color1">-m</code> <code class="ps plain">app.module</code></div></div></td></tr></tbody></table></div></div>
+<p>This command adds the <i>VideosService </i>and registers in the <i>AppModule. </i>This service will interact with the web APIs created in the <i>VideosController. </i>Open the newly added file <i>videos.service.ts </i>and modify the code in this file as shown below:</p>
+<div><div id="highlighter_378385" class="syntaxhighlighter nogutter  js"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="js plain">import { Injectable } from </code><code class="js string">'@angular/core'</code><code class="js plain">;</code></div><div class="line number2 index1 alt1"><code class="js plain">import { HttpClient } from </code><code class="js string">'@angular/common/http'</code><code class="js plain">;</code></div><div class="line number3 index2 alt2"><code class="js plain">import { Observable } from </code><code class="js string">"rxjs/Observable"</code><code class="js plain">;</code></div><div class="line number4 index3 alt1"><code class="js plain">import { Video } from </code><code class="js string">"./video"</code><code class="js plain">;</code></div><div class="line number5 index4 alt2">&nbsp;</div><div class="line number6 index5 alt1"><code class="js plain">@Injectable()</code></div><div class="line number7 index6 alt2"><code class="js plain">export class VideosService {</code></div><div class="line number8 index7 alt1">&nbsp;</div><div class="line number9 index8 alt2"><code class="js spaces">&nbsp;&nbsp;</code><code class="js plain">constructor(private httpClient: HttpClient) { }</code></div><div class="line number10 index9 alt1">&nbsp;</div><div class="line number11 index10 alt2"><code class="js spaces">&nbsp;&nbsp;</code><code class="js comments">// Getting the list of videos</code></div><div class="line number12 index11 alt1"><code class="js spaces">&nbsp;&nbsp;</code><code class="js plain">getVideos(): Observable&lt;Video[]&gt; {</code></div><div class="line number13 index12 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js keyword">return</code> <code class="js keyword">this</code><code class="js plain">.httpClient.get&lt;Video[]&gt;(</code><code class="js string">'/api/Videos'</code><code class="js plain">);</code></div><div class="line number14 index13 alt1"><code class="js spaces">&nbsp;&nbsp;</code><code class="js plain">}</code></div><div class="line number15 index14 alt2">&nbsp;</div><div class="line number16 index15 alt1"><code class="js spaces">&nbsp;&nbsp;</code><code class="js comments">// Adding a new video by calling post</code></div><div class="line number17 index16 alt2"><code class="js spaces">&nbsp;&nbsp;</code><code class="js plain">addVideo(video: Video) {</code></div><div class="line number18 index17 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js keyword">return</code> <code class="js keyword">this</code><code class="js plain">.httpClient.post(</code><code class="js string">'/api/Videos'</code><code class="js plain">,video);</code></div><div class="line number19 index18 alt2"><code class="js spaces">&nbsp;&nbsp;</code><code class="js plain">}</code></div><div class="line number20 index19 alt1">&nbsp;</div><div class="line number21 index20 alt2"><code class="js spaces">&nbsp;&nbsp;</code><code class="js comments">// Marking a video as watched using the PUT API</code></div><div class="line number22 index21 alt1"><code class="js spaces">&nbsp;&nbsp;</code><code class="js plain">setWatched(video: Video) {</code></div><div class="line number23 index22 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">video.watched = </code><code class="js keyword">true</code><code class="js plain">;</code></div><div class="line number24 index23 alt1">&nbsp;</div><div class="line number25 index24 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js keyword">return</code> <code class="js keyword">this</code><code class="js plain">.httpClient.put(`/api/Videos/${video.id}`, video);</code></div><div class="line number26 index25 alt1"><code class="js spaces">&nbsp;&nbsp;</code><code class="js plain">}</code></div><div class="line number27 index26 alt2"><code class="js plain">}</code></div></div></td></tr></tbody></table></div></div>
+<p>The <i>videos-list </i>component will use the <i>getVideos </i>method to fetch the videos and show them in a table. It needs to update the <i>watched </i>property of the video when link of a video is clicked. It is better to write a method in the component to perform both these tasks. To open the link programmatically, the <i>window </i>object has to be used.</p>
+<p>The application will be hard to test if the <i>window </i>object is used from global scope. Even if we are not going to use unit testing in this article, it is always good to use a better way to access the global objects. For this, we need to create a token using <i>InjectionToken </i>to register the object and inject it using the token. Add a new file to the <i>src </i>folder and name it <i>window.ts</i>. Add the following code to it:</p>
+<div><div id="highlighter_426524" class="syntaxhighlighter nogutter  js"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="js plain">import { InjectionToken } from </code><code class="js string">'@angular/core'</code><code class="js plain">;</code></div><div class="line number2 index1 alt1">&nbsp;</div><div class="line number3 index2 alt2"><code class="js plain">const WINDOW = </code><code class="js keyword">new</code> <code class="js plain">InjectionToken&lt;any&gt;(</code><code class="js string">'window'</code><code class="js plain">);</code></div><div class="line number4 index3 alt1">&nbsp;</div><div class="line number5 index4 alt2"><code class="js plain">export const windowProvider = { provide: WINDOW, useValue: window };</code></div></div></td></tr></tbody></table></div></div>
+<p>The object <i>windowProvider </i>can be used to register the injectable. Open the file <i>app.module.ts </i>and import the <i>windowProvider </i>object.</p>
+<div><div id="highlighter_738181" class="syntaxhighlighter nogutter  js"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="js plain">import { windowProvider } from </code><code class="js string">'./window'</code><code class="js plain">;</code></div></div></td></tr></tbody></table></div></div>
+<p>Modify the <i>providers </i>array of the module metadata as shown in the following snippet to register the token:</p>
+<div><div id="highlighter_352752" class="syntaxhighlighter nogutter  js"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="js plain">providers: [</code></div><div class="line number2 index1 alt1"><code class="js spaces">&nbsp;&nbsp;</code><code class="js plain">VideosService,</code></div><div class="line number3 index2 alt2"><code class="js spaces">&nbsp;&nbsp;</code><code class="js plain">windowProvider</code></div><div class="line number4 index3 alt1"><code class="js plain">]</code></div></div></td></tr></tbody></table></div></div>
+<p>Now we have all the objects ready to be used in the components. Open the file <i>video-list.component.ts </i>and modify the code as shown below:</p>
+<div><div id="highlighter_784825" class="syntaxhighlighter nogutter  js"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="js plain">import { Component, OnInit, Inject } from </code><code class="js string">'@angular/core'</code><code class="js plain">;</code></div><div class="line number2 index1 alt1">&nbsp;</div><div class="line number3 index2 alt2"><code class="js plain">import { VideosService } from </code><code class="js string">'../videos.service'</code><code class="js plain">;</code></div><div class="line number4 index3 alt1"><code class="js plain">import { Video } from </code><code class="js string">"../video"</code><code class="js plain">;</code></div><div class="line number5 index4 alt2"><code class="js plain">import { windowProvider } from </code><code class="js string">'../window'</code><code class="js plain">;</code></div><div class="line number6 index5 alt1">&nbsp;</div><div class="line number7 index6 alt2"><code class="js plain">@Component({</code></div><div class="line number8 index7 alt1"><code class="js spaces">&nbsp;&nbsp;</code><code class="js plain">selector: </code><code class="js string">'app-video-list'</code><code class="js plain">,</code></div><div class="line number9 index8 alt2"><code class="js spaces">&nbsp;&nbsp;</code><code class="js plain">templateUrl: </code><code class="js string">'./video-list.component.html'</code><code class="js plain">,</code></div><div class="line number10 index9 alt1"><code class="js spaces">&nbsp;&nbsp;</code><code class="js plain">styleUrls: [</code><code class="js string">'./video-list.component.css'</code><code class="js plain">]</code></div><div class="line number11 index10 alt2"><code class="js plain">})</code></div><div class="line number12 index11 alt1"><code class="js plain">export class VideoListComponent implements OnInit {</code></div><div class="line number13 index12 alt2"><code class="js spaces">&nbsp;&nbsp;</code><code class="js plain">public videos: Video[];</code></div><div class="line number14 index13 alt1">&nbsp;</div><div class="line number15 index14 alt2"><code class="js spaces">&nbsp;&nbsp;</code><code class="js plain">constructor(private videosService: VideosService,</code></div><div class="line number16 index15 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">@Inject(windowProvider.provide) private window: Window) { }</code></div><div class="line number17 index16 alt2">&nbsp;</div><div class="line number18 index17 alt1"><code class="js spaces">&nbsp;&nbsp;</code><code class="js plain">ngOnInit() {</code></div><div class="line number19 index18 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js keyword">this</code><code class="js plain">.videosService.getVideos()</code></div><div class="line number20 index19 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">.subscribe(videos =&gt; {</code></div><div class="line number21 index20 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js keyword">this</code><code class="js plain">.videos = videos;</code></div><div class="line number22 index21 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">});</code></div><div class="line number23 index22 alt2"><code class="js spaces">&nbsp;&nbsp;</code><code class="js plain">}</code></div><div class="line number24 index23 alt1">&nbsp;</div><div class="line number25 index24 alt2"><code class="js spaces">&nbsp;&nbsp;</code><code class="js plain">watch(video: Video) {</code></div><div class="line number26 index25 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js keyword">this</code><code class="js plain">.videosService.setWatched(video)</code></div><div class="line number27 index26 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">.subscribe(v =&gt; console.log(v));</code></div><div class="line number28 index27 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js keyword">this</code><code class="js plain">.window.open(video.link, </code><code class="js string">'_blank'</code><code class="js plain">);</code></div><div class="line number29 index28 alt2"><code class="js spaces">&nbsp;&nbsp;</code><code class="js plain">}</code></div><div class="line number30 index29 alt1">&nbsp;</div><div class="line number31 index30 alt2"><code class="js plain">}</code></div></div></td></tr></tbody></table></div></div>
+<p>Notice the way the <i>window </i>object is injected in the above component. It Is injected using the <i>Inject </i>decorator and the token is passed into the decorator.</p>
+<p>The template has to be modified to display the data in the table. Place the following code in the file <i>video-list.component.html:</i></p>
+<div><div id="highlighter_668969" class="syntaxhighlighter nogutter  xml"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="xml plain">&lt;</code><code class="xml keyword">table</code> <code class="xml color1">class</code><code class="xml plain">=</code><code class="xml string">"table"</code><code class="xml plain">&gt;</code></div><div class="line number2 index1 alt1"><code class="xml spaces">&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">thead</code><code class="xml plain">&gt;</code></div><div class="line number3 index2 alt2"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">tr</code><code class="xml plain">&gt;</code></div><div class="line number4 index3 alt1"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">th</code><code class="xml plain">&gt;Title&lt;/</code><code class="xml keyword">th</code><code class="xml plain">&gt;</code></div><div class="line number5 index4 alt2"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">th</code><code class="xml plain">&gt;Genre&lt;/</code><code class="xml keyword">th</code><code class="xml plain">&gt;</code></div><div class="line number6 index5 alt1"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">th</code><code class="xml plain">&gt;Watched&lt;/</code><code class="xml keyword">th</code><code class="xml plain">&gt;</code></div><div class="line number7 index6 alt2"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">th</code><code class="xml plain">&gt;Watch&lt;/</code><code class="xml keyword">th</code><code class="xml plain">&gt;</code></div><div class="line number8 index7 alt1"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;/</code><code class="xml keyword">tr</code><code class="xml plain">&gt;</code></div><div class="line number9 index8 alt2"><code class="xml spaces">&nbsp;&nbsp;</code><code class="xml plain">&lt;/</code><code class="xml keyword">thead</code><code class="xml plain">&gt;</code></div><div class="line number10 index9 alt1"><code class="xml spaces">&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">tbody</code><code class="xml plain">&gt;</code></div><div class="line number11 index10 alt2"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">tr</code> <code class="xml plain">*</code><code class="xml color1">ngFor</code><code class="xml plain">=</code><code class="xml string">"let video of videos"</code><code class="xml plain">&gt;</code></div><div class="line number12 index11 alt1"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">td</code><code class="xml plain">&gt;{{video.title}}&lt;/</code><code class="xml keyword">td</code><code class="xml plain">&gt;</code></div><div class="line number13 index12 alt2"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">td</code><code class="xml plain">&gt;{{video.genre}}&lt;/</code><code class="xml keyword">td</code><code class="xml plain">&gt;</code></div><div class="line number14 index13 alt1"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">td</code><code class="xml plain">&gt;</code></div><div class="line number15 index14 alt2"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">span</code> <code class="xml plain">*</code><code class="xml color1">ngIf</code><code class="xml plain">=</code><code class="xml string">"video.watched"</code><code class="xml plain">&gt;Yes&lt;/</code><code class="xml keyword">span</code><code class="xml plain">&gt;</code></div><div class="line number16 index15 alt1"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">span</code> <code class="xml plain">*</code><code class="xml color1">ngIf</code><code class="xml plain">=</code><code class="xml string">"!video.watched"</code><code class="xml plain">&gt;No&lt;/</code><code class="xml keyword">span</code><code class="xml plain">&gt;</code></div><div class="line number17 index16 alt2"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;/</code><code class="xml keyword">td</code><code class="xml plain">&gt;</code></div><div class="line number18 index17 alt1"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">td</code><code class="xml plain">&gt;</code></div><div class="line number19 index18 alt2"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">a</code> <code class="xml color1">href</code><code class="xml plain">=</code><code class="xml string">"{{video.link}}"</code> <code class="xml color1">target</code><code class="xml plain">=</code><code class="xml string">"_blank"</code> <code class="xml plain">(click)="watch(video)"&gt;Watch Video&lt;/</code><code class="xml keyword">a</code><code class="xml plain">&gt;</code></div><div class="line number20 index19 alt1"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;/</code><code class="xml keyword">td</code><code class="xml plain">&gt;</code></div><div class="line number21 index20 alt2"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;/</code><code class="xml keyword">tr</code><code class="xml plain">&gt;</code></div><div class="line number22 index21 alt1"><code class="xml spaces">&nbsp;&nbsp;</code><code class="xml plain">&lt;/</code><code class="xml keyword">tbody</code><code class="xml plain">&gt;</code></div><div class="line number23 index22 alt2"><code class="xml plain">&lt;/</code><code class="xml keyword">table</code><code class="xml plain">&gt;</code></div></div></td></tr></tbody></table></div></div>
+<p>Save these files and run the application. Figure 8 shows the home page displaying a list of videos.</p>
+<p><img title="video-tracker-list" border="0" alt="video-tracker-list" src="./Building Angular Applications using ASP.NET Core Angular CLI Template _ DotNetCurry_files/video-tracker-list.png" width="628" height="262"></p>
+<p><font size="2" face="Times New Roman">Figure 8 – Video tracker with videos list</font></p>
+<p>Let’s get the <i>add-video </i>component ready to add new videos to the application. Open the file <i>add-video.component.ts </i>and replace it with the following code:</p>
+<div><div id="highlighter_101024" class="syntaxhighlighter nogutter  js"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="js plain">import { Component, OnInit } from </code><code class="js string">'@angular/core'</code><code class="js plain">;</code></div><div class="line number2 index1 alt1"><code class="js plain">import { Router } from </code><code class="js string">'@angular/router'</code><code class="js plain">;</code></div><div class="line number3 index2 alt2">&nbsp;</div><div class="line number4 index3 alt1"><code class="js plain">import { VideosService } from </code><code class="js string">'../videos.service'</code><code class="js plain">;</code></div><div class="line number5 index4 alt2"><code class="js plain">import { Video } from </code><code class="js string">"../video"</code><code class="js plain">;</code></div><div class="line number6 index5 alt1">&nbsp;</div><div class="line number7 index6 alt2"><code class="js plain">@Component({</code></div><div class="line number8 index7 alt1"><code class="js spaces">&nbsp;&nbsp;</code><code class="js plain">selector: </code><code class="js string">'app-add-video'</code><code class="js plain">,</code></div><div class="line number9 index8 alt2"><code class="js spaces">&nbsp;&nbsp;</code><code class="js plain">templateUrl: </code><code class="js string">'./add-video.component.html'</code><code class="js plain">,</code></div><div class="line number10 index9 alt1"><code class="js spaces">&nbsp;&nbsp;</code><code class="js plain">styleUrls: [</code><code class="js string">'./add-video.component.css'</code><code class="js plain">]</code></div><div class="line number11 index10 alt2"><code class="js plain">})</code></div><div class="line number12 index11 alt1"><code class="js plain">export class AddVideoComponent {</code></div><div class="line number13 index12 alt2"><code class="js spaces">&nbsp;&nbsp;</code><code class="js plain">public genres: string[];</code></div><div class="line number14 index13 alt1"><code class="js spaces">&nbsp;&nbsp;</code><code class="js plain">public video: Video = {};</code></div><div class="line number15 index14 alt2">&nbsp;</div><div class="line number16 index15 alt1"><code class="js spaces">&nbsp;&nbsp;</code><code class="js plain">constructor(</code></div><div class="line number17 index16 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">private router: Router,</code></div><div class="line number18 index17 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">private videosSvc: VideosService) {</code></div><div class="line number19 index18 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js keyword">this</code><code class="js plain">.genres = [</code></div><div class="line number20 index19 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js string">""</code><code class="js plain">,</code></div><div class="line number21 index20 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js string">"Music"</code><code class="js plain">,</code></div><div class="line number22 index21 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js string">"Comedy"</code><code class="js plain">,</code></div><div class="line number23 index22 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js string">"Inspirational"</code><code class="js plain">,</code></div><div class="line number24 index23 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js string">"Tech"</code><code class="js plain">,</code></div><div class="line number25 index24 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js string">"News"</code><code class="js plain">,</code></div><div class="line number26 index25 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js string">"Sports"</code></div><div class="line number27 index26 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">];</code></div><div class="line number28 index27 alt1"><code class="js spaces">&nbsp;&nbsp;</code><code class="js plain">}</code></div><div class="line number29 index28 alt2">&nbsp;</div><div class="line number30 index29 alt1"><code class="js spaces">&nbsp;&nbsp;</code><code class="js plain">addVideo() {</code></div><div class="line number31 index30 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js keyword">this</code><code class="js plain">.videosSvc.addVideo(</code><code class="js keyword">this</code><code class="js plain">.video)</code></div><div class="line number32 index31 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js comments">// The subscribe method here adds a listener to the asynchronous add</code></div><div class="line number33 index32 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js comments">// operation and the listener is called once the video is added.</code></div><div class="line number34 index33 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js comments">// Here, we are switching to the video list page after adding the video</code></div><div class="line number35 index34 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">.subscribe(() =&gt; {</code></div><div class="line number36 index35 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js keyword">this</code><code class="js plain">.router.navigateByUrl(</code><code class="js string">'/'</code><code class="js plain">);</code></div><div class="line number37 index36 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">});</code></div><div class="line number38 index37 alt1"><code class="js spaces">&nbsp;&nbsp;</code><code class="js plain">}</code></div><div class="line number39 index38 alt2"><code class="js plain">}</code></div></div></td></tr></tbody></table></div></div>
+<p>The last thing to do is to modify the template of the <i>add-video </i>component to add a form. The form will have basic required field validations to ensure that the fields have values when the form is submitted.</p>
+<p>Place the following code in the file <i>add-video.component.html:</i></p>
+<div><div id="highlighter_99860" class="syntaxhighlighter nogutter  xml"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="xml plain">&lt;</code><code class="xml keyword">div</code><code class="xml plain">&gt;</code></div><div class="line number2 index1 alt1"><code class="xml spaces">&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">form</code> <code class="xml plain">#</code><code class="xml color1">videoForm</code><code class="xml plain">=</code><code class="xml string">"ngForm"</code> <code class="xml plain">(ngSubmit)="addVideo()"&gt;</code></div><div class="line number3 index2 alt2"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">div</code> <code class="xml color1">class</code><code class="xml plain">=</code><code class="xml string">"form-group"</code><code class="xml plain">&gt;</code></div><div class="line number4 index3 alt1"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">label</code> <code class="xml color1">for</code><code class="xml plain">=</code><code class="xml string">"name"</code><code class="xml plain">&gt;Title&lt;/</code><code class="xml keyword">label</code><code class="xml plain">&gt;</code></div><div class="line number5 index4 alt2"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">input</code> <code class="xml color1">type</code><code class="xml plain">=</code><code class="xml string">"text"</code> <code class="xml color1">class</code><code class="xml plain">=</code><code class="xml string">"form-control"</code></div><div class="line number6 index5 alt1"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml color1">name</code><code class="xml plain">=</code><code class="xml string">"title"</code></div><div class="line number7 index6 alt2"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">required</code></div><div class="line number8 index7 alt1"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">[(ngModel)]="video.title"</code></div><div class="line number9 index8 alt2"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">#</code><code class="xml color1">title</code><code class="xml plain">=</code><code class="xml string">"ngModel"</code><code class="xml plain">&gt;</code></div><div class="line number10 index9 alt1"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;/</code><code class="xml keyword">div</code><code class="xml plain">&gt;</code></div><div class="line number11 index10 alt2">&nbsp;</div><div class="line number12 index11 alt1"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">div</code> <code class="xml color1">class</code><code class="xml plain">=</code><code class="xml string">"form-group"</code><code class="xml plain">&gt;</code></div><div class="line number13 index12 alt2"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">label</code> <code class="xml color1">for</code><code class="xml plain">=</code><code class="xml string">"link"</code><code class="xml plain">&gt;Link&lt;/</code><code class="xml keyword">label</code><code class="xml plain">&gt;</code></div><div class="line number14 index13 alt1"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">input</code> <code class="xml color1">type</code><code class="xml plain">=</code><code class="xml string">"text"</code> <code class="xml color1">class</code><code class="xml plain">=</code><code class="xml string">"form-control"</code></div><div class="line number15 index14 alt2"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml color1">name</code><code class="xml plain">=</code><code class="xml string">"link"</code></div><div class="line number16 index15 alt1"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">required</code></div><div class="line number17 index16 alt2"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">[(ngModel)]="video.link"</code></div><div class="line number18 index17 alt1"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">#</code><code class="xml color1">link</code><code class="xml plain">=</code><code class="xml string">"ngModel"</code><code class="xml plain">&gt;</code></div><div class="line number19 index18 alt2"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;/</code><code class="xml keyword">div</code><code class="xml plain">&gt;</code></div><div class="line number20 index19 alt1">&nbsp;</div><div class="line number21 index20 alt2"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">div</code> <code class="xml color1">class</code><code class="xml plain">=</code><code class="xml string">"form-group"</code><code class="xml plain">&gt;</code></div><div class="line number22 index21 alt1"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">label</code> <code class="xml color1">for</code><code class="xml plain">=</code><code class="xml string">"genre"</code><code class="xml plain">&gt;Genre&lt;/</code><code class="xml keyword">label</code><code class="xml plain">&gt;</code></div><div class="line number23 index22 alt2"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">select</code> <code class="xml color1">class</code><code class="xml plain">=</code><code class="xml string">"form-control"</code></div><div class="line number24 index23 alt1"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml color1">name</code><code class="xml plain">=</code><code class="xml string">"genre"</code></div><div class="line number25 index24 alt2"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">required</code></div><div class="line number26 index25 alt1"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">[(ngModel)]="video.genre"</code></div><div class="line number27 index26 alt2"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">#</code><code class="xml color1">genre</code><code class="xml plain">=</code><code class="xml string">"ngModel"</code><code class="xml plain">&gt;</code></div><div class="line number28 index27 alt1"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">option</code> <code class="xml plain">*</code><code class="xml color1">ngFor</code><code class="xml plain">=</code><code class="xml string">"let genre of genres"</code> <code class="xml plain">[value]="genre"&gt;{{genre}}&lt;/</code><code class="xml keyword">option</code><code class="xml plain">&gt;</code></div><div class="line number29 index28 alt2"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;/</code><code class="xml keyword">select</code><code class="xml plain">&gt;</code></div><div class="line number30 index29 alt1"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;/</code><code class="xml keyword">div</code><code class="xml plain">&gt;</code></div><div class="line number31 index30 alt2">&nbsp;</div><div class="line number32 index31 alt1"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">button</code> <code class="xml color1">type</code><code class="xml plain">=</code><code class="xml string">"submit"</code> <code class="xml color1">class</code><code class="xml plain">=</code><code class="xml string">"btn btn-success"</code></div><div class="line number33 index32 alt2"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">[disabled]="!videoForm.form.valid"&gt;Submit&lt;/</code><code class="xml keyword">button</code><code class="xml plain">&gt;</code></div><div class="line number34 index33 alt1"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">button</code> <code class="xml color1">type</code><code class="xml plain">=</code><code class="xml string">"reset"</code> <code class="xml color1">class</code><code class="xml plain">=</code><code class="xml string">"btn"</code></div><div class="line number35 index34 alt2"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">(click)="videoForm.reset()"&gt;Reset&lt;/</code><code class="xml keyword">button</code><code class="xml plain">&gt;</code></div><div class="line number36 index35 alt1"><code class="xml spaces">&nbsp;&nbsp;</code><code class="xml plain">&lt;/</code><code class="xml keyword">form</code><code class="xml plain">&gt;</code></div><div class="line number37 index36 alt2"><code class="xml plain">&lt;/</code><code class="xml keyword">div</code><code class="xml plain">&gt;</code></div></div></td></tr></tbody></table></div></div>
+<p>Now the application is complete. Run it and you can add a new video. And then you can see it in the video list page.</p>
+<h3>Conclusion</h3>
+<p>As we saw, ASP.NET core now has good support for Angular development using Angular CLI. The template doesn’t try to hide any of the features of Angular CLI and provides a good support for building and deploying Angular applications with ASP.NET core. We can use this template to build and deploy dynamic web applications using the goodness of both the technologies.</p>
+<p><em><strong>Download the entire source code </strong>from GitHub at </em><a href="http://bit.ly/dncm35-aspcorecli" rel="nofollow" target="_blank"><em>bit.ly/dncm35-aspcorecli</em></a></p>
+<p><em>This article was technically reviewed by </em><a href="https://www.dotnetcurry.com/author/v-keerti-kotaru"><em>Keerti Kotaru</em></a><em>.</em></p>
+<div id="csharpbook" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 articletext">
+        <div class="col-md-3 col-sm-3 col-xs-4">
+            <img alt="Absolutely Awesome Book on C# and .NET" src="./Building Angular Applications using ASP.NET Core Angular CLI Template _ DotNetCurry_files/csharp-book-ad.jpg">
+		</div>
+		<div class="col-md-9 col-sm-9 col-xs-8">
+			<p>C# and .NET have been around for a very long time, but their constant growth means there’s always more to learn.</p>
+            <p>We at DotNetCurry are very excited to announce the pre-order of <strong><a href="http://www.dotnetcurry.org/r/dnc-csharpbk-web-textad-solid" target="_blank" rel="nofollow">The Absolutely Awesome Book on C# and .NET</a></strong>. This is a concise technical eBook and will be available in PDF, ePub, and mobi. </p><p>Organized around concepts, this eBook aims to provide a concise, yet solid foundation in C# and .NET, covering <b>C# 6.0, C# 7.0 and .NET Core</b>. Use these concepts in your next .NET Project or to crack your next .NET Interview.</p>
+            <p><strong><a href="http://www.dotnetcurry.org/r/dnc-csharpbk-web-textad-solid" target="_blank" style="color:#cd282f" rel="nofollow">Click here to Pre-Order this eBook at a Discounted Price!</a><a rel="nofollow" target="_blank"></a></strong></p><a rel="nofollow" target="_blank">
+		</a></div><a rel="nofollow" target="_blank"> 
+      </a></div><a rel="nofollow" target="_blank">
+          <div class="footerheading margin-top-20">What Others Are Reading!</div>
+          </a><div class="col-xs-12 col-sm-12 col-md-12 similarauthor"><a rel="nofollow" target="_blank">  
+                </a><div class="row"><a rel="nofollow" target="_blank">
+                    </a><div class="col-md-12 similararticles"><a rel="nofollow" target="_blank">
+                                  
+                    </a><a href="http://www.dotnetcurry.com/ShowArticle.aspx?ID=1468" style="color:#4A75AD;font-weight:normal;">Facade Design Pattern: Still relevant in ASP.NET Core?</a>
+                     <br><br>
+                              
+                    <a href="http://www.dotnetcurry.com/ShowArticle.aspx?ID=1433" style="color:#4A75AD;font-weight:normal;">End-to-End (E2E) Testing of ASP.NET Core Applications using Selenium and Nightwatch.js</a>
+                     <br><br>
+                              
+                    <a href="http://www.dotnetcurry.com/ShowArticle.aspx?ID=1426" style="color:#4A75AD;font-weight:normal;">Dependency Injection in ASP.NET Core - Demystified</a>
+                     <br><br>
+                              
+                    <a href="http://www.dotnetcurry.com/ShowArticle.aspx?ID=1420" style="color:#4A75AD;font-weight:normal;">Integration Testing for ASP.NET Core Applications</a>
+                     <br><br>
+                              
+                    <a href="http://www.dotnetcurry.com/ShowArticle.aspx?ID=1414" style="color:#4A75AD;font-weight:normal;">Unit Testing ASP.NET Core Applications</a>
+                     <br><br>
+                              
+                    <a href="http://www.dotnetcurry.com/ShowArticle.aspx?ID=1410" style="color:#4A75AD;font-weight:normal;">Using Azure database for PostgreSQL in ASP.NET Core (with EF Core)</a>
+                     <br><br>
+                    
+
+
+
+<span id="ctl00_MainContent_SimilarPosts1_lblCategoNam"></span>
+
+        
+        
+     
+
+                    </div>
+                </div>              
+          </div>  
+		<!-- DNC_BottomText -->
+          <div class="visible-xs visible-sm visible-md visible-lg">
+		    <div id="dnc-bot-txtad" class="articletext">	
+
+		    <a href="http://www.dotnetcurry.org/r/orpalis-gdpicture" rel="nofollow" target="_blank">View, Print and Scan Documents in ASP.NET. Free SDK Trial.</a></div>
+        </div>
+          <div class="socialbox">
+<b>Was this article worth reading? Share it with fellow developers too. Thanks!</b>
+<br>
+		<!-- Sharingbutton Facebook -->
+<a class="resp-sharing-button__link" id="fbsharelink" target="_blank" aria-label="Share on Facebook" rel="nofollow" href="https://facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.dotnetcurry.com%2Fangularjs%2F1432%2Faspnet-core-apps-using-angular-cli-template">
+  <div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--large"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg version="1.1" x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve">
+        <g>
+            <path d="M18.768,7.465H14.5V5.56c0-0.896,0.594-1.105,1.012-1.105s2.988,0,2.988,0V0.513L14.171,0.5C10.244,0.5,9.5,3.438,9.5,5.32 v2.145h-3v4h3c0,5.212,0,12,0,12h5c0,0,0-6.85,0-12h3.851L18.768,7.465z"></path>
+        </g>
+    </svg>
+    </div>Share on Facebook</div>
+</a>
+
+<!-- Sharingbutton Twitter -->
+
+<a class="resp-sharing-button__link" id="twtsharelink" target="_blank" aria-label="Share on Twitter" rel="nofollow" href="https://twitter.com/intent/tweet/?text=Building%20Angular%20Applications%20using%20ASP.NET%20Core%20Angular%20CLI%20Template%20%7C%20DotNetCurry&amp;url=https%3A%2F%2Fwww.dotnetcurry.com%2Fangularjs%2F1432%2Faspnet-core-apps-using-angular-cli-template">
+  <div class="resp-sharing-button resp-sharing-button--twitter resp-sharing-button--large"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg version="1.1" x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve">
+        <g>
+            <path d="M23.444,4.834c-0.814,0.363-1.5,0.375-2.228,0.016c0.938-0.562,0.981-0.957,1.32-2.019c-0.878,0.521-1.851,0.9-2.886,1.104 C18.823,3.053,17.642,2.5,16.335,2.5c-2.51,0-4.544,2.036-4.544,4.544c0,0.356,0.04,0.703,0.117,1.036 C8.132,7.891,4.783,6.082,2.542,3.332C2.151,4.003,1.927,4.784,1.927,5.617c0,1.577,0.803,2.967,2.021,3.782 C3.203,9.375,2.503,9.171,1.891,8.831C1.89,8.85,1.89,8.868,1.89,8.888c0,2.202,1.566,4.038,3.646,4.456 c-0.666,0.181-1.368,0.209-2.053,0.079c0.579,1.804,2.257,3.118,4.245,3.155C5.783,18.102,3.372,18.737,1,18.459 C3.012,19.748,5.399,20.5,7.966,20.5c8.358,0,12.928-6.924,12.928-12.929c0-0.198-0.003-0.393-0.012-0.588 C21.769,6.343,22.835,5.746,23.444,4.834z"></path>
+        </g>
+    </svg>
+    </div>Share on Twitter</div>
+</a>
+
+<!-- Sharingbutton LinkedIn -->
+<a class="resp-sharing-button__link" id="linkdinsharelink" target="_blank" aria-label="Share on LinkedIn" rel="nofollow" href="https://www.linkedin.com/shareArticle?mini=true&amp;amp;url=https%3A%2F%2Fwww.dotnetcurry.com%2Fangularjs%2F1432%2Faspnet-core-apps-using-angular-cli-template&amp;title=Building%20Angular%20Applications%20using%20ASP.NET%20Core%20Angular%20CLI%20Template%20%7C%20DotNetCurry">
+  <div class="resp-sharing-button resp-sharing-button--linkedin resp-sharing-button--large"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6.5 21.5h-5v-13h5v13zM4 6.5C2.5 6.5 1.5 5.3 1.5 4s1-2.4 2.5-2.4c1.6 0 2.5 1 2.6 2.5 0 1.4-1 2.5-2.6 2.5zm11.5 6c-1 0-2 1-2 2v7h-5v-13h5V10s1.6-1.5 4-1.5c3 0 5 2.2 5 6.3v6.7h-5v-7c0-1-1-2-2-2z"></path></svg>
+    </div>Share on LinkedIn</div>
+</a>
+
+<!-- Sharingbutton Google+ -->
+<a class="resp-sharing-button__link" id="googsharelink" target="_blank" aria-label="Share on Google+" rel="nofollow" href="https://plus.google.com/share?url=https%3A%2F%2Fwww.dotnetcurry.com%2Fangularjs%2F1432%2Faspnet-core-apps-using-angular-cli-template">
+  <div class="resp-sharing-button resp-sharing-button--google resp-sharing-button--large"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg version="1.1" x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve">
+        <g>
+            <path d="M11.366,12.928c-0.729-0.516-1.393-1.273-1.404-1.505c0-0.425,0.038-0.627,0.988-1.368 c1.229-0.962,1.906-2.228,1.906-3.564c0-1.212-0.37-2.289-1.001-3.044h0.488c0.102,0,0.2-0.033,0.282-0.091l1.364-0.989 c0.169-0.121,0.24-0.338,0.176-0.536C14.102,1.635,13.918,1.5,13.709,1.5H7.608c-0.667,0-1.345,0.118-2.011,0.347 c-2.225,0.766-3.778,2.66-3.778,4.605c0,2.755,2.134,4.845,4.987,4.91c-0.056,0.22-0.084,0.434-0.084,0.645 c0,0.425,0.108,0.827,0.33,1.216c-0.026,0-0.051,0-0.079,0c-2.72,0-5.175,1.334-6.107,3.32C0.623,17.06,0.5,17.582,0.5,18.098 c0,0.501,0.129,0.984,0.382,1.438c0.585,1.046,1.843,1.861,3.544,2.289c0.877,0.223,1.82,0.335,2.8,0.335 c0.88,0,1.718-0.114,2.494-0.338c2.419-0.702,3.981-2.482,3.981-4.538C13.701,15.312,13.068,14.132,11.366,12.928z M3.66,17.443 c0-1.435,1.823-2.693,3.899-2.693h0.057c0.451,0.005,0.892,0.072,1.309,0.2c0.142,0.098,0.28,0.192,0.412,0.282 c0.962,0.656,1.597,1.088,1.774,1.783c0.041,0.175,0.063,0.35,0.063,0.519c0,1.787-1.333,2.693-3.961,2.693 C5.221,20.225,3.66,19.002,3.66,17.443z M5.551,3.89c0.324-0.371,0.75-0.566,1.227-0.566l0.055,0 c1.349,0.041,2.639,1.543,2.876,3.349c0.133,1.013-0.092,1.964-0.601,2.544C8.782,9.589,8.363,9.783,7.866,9.783H7.865H7.844 c-1.321-0.04-2.639-1.6-2.875-3.405C4.836,5.37,5.049,4.462,5.551,3.89z"></path>
+            <polygon points="23.5,9.5 20.5,9.5 20.5,6.5 18.5,6.5 18.5,9.5 15.5,9.5 15.5,11.5 18.5,11.5 18.5,14.5 20.5,14.5 20.5,11.5  23.5,11.5 	"></polygon>
+        </g>
+    </svg>
+    </div>Share on Google+</div>
+</a>
+		<!--<ul class="socialshare">
+			<li><div class="gplusarticle"><b>Please Share this article if you think it was worth reading. Thanks!</b></div></li>
+			<li><div class="fb-share-button" data-layout="button"> </div> </li>
+			<li><script type="IN/Share"></script></li>                    
+		</ul>-->
+	</div>
+		    <br>
+          <div class="col-xs-12 col-sm-12 col-md-12 similarauthor">  
+            
+          <div class="row footerheading">Author</div>
+            <div class="row">
+                <div class="col-md-12">
+                    
+
+<div class="col-md-12 author-wrap img-rounded">
+    <div class="author-image thumbnail">
+        <img id="ctl00_MainContent_authorInfo_imgAuthor" onerror="this.onload = null; this.src=&#39;/images/authors/NoImage.jpg&#39;;" src="./Building Angular Applications using ASP.NET Core Angular CLI Template _ DotNetCurry_files/Ravi Kiran.jpg" style="border-width:0px;">
+         
+    </div>
+    <div class="author-desc caption">
+            Rabi Kiran (a.k.a. Ravi Kiran) is a developer working on Microsoft Technologies at Hyderabad. These days, he is spending his time on JavaScript frameworks like AngularJS, latest updates to JavaScript in ES6 and ES7, Web Components, Node.js and also on several Microsoft technologies including ASP.NET 5, SignalR and C#. He is an active <a href="http://sravi-kiran.blogspot.com/" rel="nofollow" target="_blank">blogger</a>, an author at <a href="http://www.sitepoint.com/author/rkiran/" rel="nofollow" target="_blank">SitePoint</a> and at <a href="http://www.dotnetcurry.com/author/ravi-kiran">DotNetCurry</a>. He is rewarded with Microsoft MVP (Visual Studio and Dev Tools) and DZone MVB awards for his contribution to the community
+    </div>
+   
+</div>
+
+
+
+  
+                </div>
+            </div>
+      </div>
+      </div>
+
+            
+      
+      <!--<div class="footerheading">Further Reading - Articles You May Like!</div>-->
+      
+      <br><br>
+    <div class="col-xs-12 col-sm-12 col-md-12">
+     <a href="http://www.copyscape.com/" target="_blank" rel="nofollow"><img src="./Building Angular Applications using ASP.NET Core Angular CLI Template _ DotNetCurry_files/copyscape.gif" alt="Page copy protected against web site content infringement 	by Copyscape" title="Do not copy content from the page. Plagiarism will be detected by Copyscape." height="16" border="0"></a>
+    </div>
+<br><br><br>
+       
+   
+   <hr>
+  
+   <div id="ctl00_MainContent_panComments" class="col-md-12 spacer">
+	
+   <div class="footerheading">Feedback - Leave us some adulation, criticism and everything in between!</div>
+    <ul class="tabHeader">
+        <li class="current"><a class="show-comments" href="https://www.dotnetcurry.com/angularjs/1432/aspnet-core-apps-using-angular-cli-template#t1">Click here to post your Comments</a>
+        </li>
+        
+    </ul>
+   <div class="tabContent">
+    <div id="t1" class="col-md-12 column current">
+            <div id="disqus_thread"></div>      
+       <!--<script type="text/javascript">
+            var disqus_shortname = 'dotnetcurry';
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>-->
+   </div>
+    <div id="t2">
+   
+   
+</div> <!-- t2 -->
+    </div> <!-- tabcontent -->
+   
+</div>  
+      <!-- Place this render call where appropriate 
+<script type="text/javascript">
+    (function () {
+        var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+        po.src = 'https://apis.google.com/js/plusone.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+    })();
+</script> 
+<script src="//platform.linkedin.com/in.js" type="text/javascript"> lang: en_US</script>
+
+<script>    !function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = "//platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); } } (document, "script", "twitter-wjs");</script>-->
+<!-- Finally, to actually run the highlighter, you need to include this JS on your page -->
+
+       
+
+		                </div>
+
+                        
+
+                
+
+		                <div id="rightcol" class="col-md-4">
+    
+                            <!-- <div class="row">
+                                  <div class="spacerforsearch">
+                                    <div class="input-group">
+                                      <input name="ctl00$searchbox" id="ctl00_searchbox" type="text" class="form-control" placeholder="Search DotNetCurry.com for..." onFocus="this.className = &#39;form-control&#39;" style="border-color:#94C7EF;border-width:1px;border-style:solid;width:100%" />
+                                      <span class="input-group-btn">
+                                        <input type="submit" name="ctl00$SearchButton" value="Go!" id="ctl00_SearchButton" class="btn btn-default" type="button" />
+                                      </span>
+                                    </div>
+                                  </div>
+                            </div> -->
+                            <div class="margin-vertical-20">                           
+                            
+                            <div class="side-widget">
+					            <div class="featured-tools">
+						            <span>Featured Tools</span>
+						            <div id="creatives">
+				                        <div id="ban-pos-1">
+				                        <a href="http://www.dotnetcurry.net/s/dnc-arction-heat-may17" rel="nofollow" target="_blank"><img src="./Building Angular Applications using ASP.NET Core Angular CLI Template _ DotNetCurry_files/heatmap.png"></a></div>                                        
+				                        <div id="ban-pos-2" style="display: none;">
+                                            <div class="padding-vertical-10"></div>
+				                        <a href="http://www.dotnetcurry.net/s/dnc-gc-300-150" rel="nofollow" target="_blank"><img src="./Building Angular Applications using ASP.NET Core Angular CLI Template _ DotNetCurry_files/gc-300x150-apr.png"></a></div>
+                                        <div class="padding-vertical-10"></div>
+				                        <div id="ban-pos-3">
+				                        <a href="http://www.dotnetcurry.org/r/dnc-csharpbk-web-300x150" rel="nofollow" target="_blank"><img src="./Building Angular Applications using ASP.NET Core Angular CLI Template _ DotNetCurry_files/csharp-book-new.png"></a></div>
+					                    <div class="padding-vertical-10"></div>
+				                        <div id="ban-pos-4">
+				                        <a href="http://www.dotnetcurry.net/s/dnc-products" rel="nofollow" target="_blank"><img src="./Building Angular Applications using ASP.NET Core Angular CLI Template _ DotNetCurry_files/dnc-js-widgets.png"></a></div>
+			                        </div>
+					            </div>
+				            </div>                          
+                            
+
+                            <div class="sec-title">
+                                <h4>Categories</h4>
+                            </div>
+                            <div class="side-widget">
+                                <ul id="toggle-view">
+                                    <li>
+                                        <h3>.NET Web</h3>
+                                        <span class="fa fa-angle-down"></span>
+                                        <div class="toggle-panel">
+                                            <div>
+                                                <a href="https://www.dotnetcurry.com/tutorials/aspnet">ASP.NET</a>
+                                                <a href="https://www.dotnetcurry.com/tutorials/aspnet-mvc">ASP.NET MVC</a>
+                                            </div>
+                                            <div>
+                                                <a href="https://www.dotnetcurry.com/tutorials/aspnet-core">ASP.NET Core</a>
+                                                <a href="https://www.dotnetcurry.com/tutorials/aspnet-ajax">ASP.NET AJAX</a>
+                                            </div>
+                                            <div>
+                                                <a href="https://www.dotnetcurry.com/tutorials/sharepoint">SharePoint</a>
+                                                <a href="https://www.dotnetcurry.com/tutorials/wcf">WCF</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <h3>.NET Framework, Visual Studio and C#</h3>
+                                        <span class="fa fa-angle-down"></span>
+                                        <div class="toggle-panel">
+                                            <div>
+                                                <a href="https://www.dotnetcurry.com/tutorials/csharp">C#</a>
+                                                <a href="https://www.dotnetcurry.com/tutorials/linq">LINQ</a>
+                                            </div>
+                                            <div>
+                                                <a href="https://www.dotnetcurry.com/tutorials/visualstudio">Visual Studio</a>
+                                                <a href="https://www.dotnetcurry.com/tutorials/vsts-tfs">VSTS &amp; TFS</a>
+                                            </div>
+                                            <div>
+                                                <a href="https://www.dotnetcurry.com/tutorials/entityframework">Entity Framework</a>
+                                                <a href="https://www.dotnetcurry.com/tutorials/dotnetframework">.NET Framework</a>
+                                            </div>
+                                            <div>
+                                                <a href="https://www.dotnetcurry.com/tutorials/dotnet-standard-core">.NET Standard &amp; .NET Core</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <h3>Patterns &amp; Practices</h3>
+                                        <span class="fa fa-angle-down"></span>
+                                        <div class="toggle-panel">
+                                            <div>
+                                                <a href="https://www.dotnetcurry.com/tutorials/patterns-practices">Design Patterns</a>
+                                                <a href="https://www.dotnetcurry.com/tutorials/software-gardening">Software Gardening</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <h3>Cloud and Mobile</h3>
+                                        <span class="fa fa-angle-down"></span>
+                                        <div class="toggle-panel">
+                                            <div>
+                                                <a href="https://www.dotnetcurry.com/tutorials/windows-azure">Microsoft Azure</a>
+                                                <a href="https://www.dotnetcurry.com/tutorials/xamarin">Xamarin</a>
+                                            </div>
+                                            <div>
+                                                <a href="https://www.dotnetcurry.com/tutorials/powershell">Powershell</a>
+                                                <a href="https://www.dotnetcurry.com/tutorials/machine-learning-ai">Machine Learning &amp; AI</a>
+                                            </div>
+                                            <div>
+                                                <a href="https://www.dotnetcurry.com/tutorials/windows-store">UWP &amp; Windows Store</a>
+                                                <a href="https://www.dotnetcurry.com/tutorials/windowsphone">Windows Phone</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <h3>JavaScript</h3>
+                                        <span class="fa fa-angle-down"></span>
+                                        <div class="toggle-panel">
+                                            <div>
+                                                <a href="https://www.dotnetcurry.com/tutorials/typescript">TypeScript</a>
+                                                <a href="https://www.dotnetcurry.com/tutorials/angularjs">Angular</a>
+                                            </div>
+                                            <div>
+                                                <a href="https://www.dotnetcurry.com/tutorials/jquery-aspnet">jQuery</a>
+                                                <a href="https://www.dotnetcurry.com/tutorials/nodejs">Node.js</a>
+                                            </div>
+                                            <div>
+                                                <a href="https://www.dotnetcurry.com/tutorials/reactjs">React.js</a>
+                                                <a href="https://www.dotnetcurry.com/tutorials/backbonejs">Backbone.js</a>
+                                            </div>
+                                            <div>
+                                                <a href="https://www.dotnetcurry.com/tutorials/html5-javascript">HTML5 &amp; JavaScript</a>
+                                                <a href="https://www.dotnetcurry.com/tutorials/bootstrap-css">Bootstrap &amp; CSS</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <h3>.NET Desktop</h3>
+                                        <span class="fa fa-angle-down"></span>
+                                        <div class="toggle-panel">
+                                            <div>
+                                                <a href="https://www.dotnetcurry.com/tutorials/wpf">WPF</a>
+                                                <a href="https://www.dotnetcurry.com/tutorials/winforms">WinForms</a>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <h3>Interview Questions &amp; Product Reviews</h3>
+                                        <span class="fa fa-angle-down"></span>
+                                        <div class="toggle-panel">
+                                            <div>
+                                                <a href="https://www.dotnetcurry.com/tutorials/dotnetinterview">.NET Interview Q&amp;A</a>
+                                                <a href="https://www.dotnetcurry.com/tutorials/product-articles-review">Product Reviews</a>
+                                            </div>
+                                            <div>
+                                                <a href="https://www.dotnetcurry.com/tutorials/general-programming-topics">General Topics</a>
+
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="sec-title">
+                                <h3><b>JOIN OUR COMMUNITY</b></h3>
+                            </div>
+                            <div class="side-widget">
+					            
+                                <div class="side-social">
+                        <a href="https://www.facebook.com/dotnetcurry" rel="nofollow" target="_blank"><i class="fa fa-facebook"></i> 51,059 <span>fans</span></a>
+                        <a href="https://www.twitter.com/dotnetcurry" rel="nofollow" target="_blank"><i class="fa fa-twitter"></i> 7,564 <span>followers</span></a>
+                        <a href="https://www.dotnetcurry.com/magazine/"><i class="fa fa-envelope"></i> 102,312 <span>subscribers</span></a>
+                    </div>
+				            </div>
+
+                            <div class="sec-title">
+                                <h3><b>POPULAR ARTICLES</b></h3>
+                            </div>
+                            <div id="latestart" class="side-widget">
+                                <div>
+                                     
+            <a id="ctl00_toplat_Repeater1_ctl00_lnkTitle" class="top" href="http://www.dotnetcurry.com/ShowArticle.aspx?ID=1449" style="color:#4A75AD;font-weight:normal;">Writing Honest Methods in C#</a>
+            
+                 <br><br>
+            
+            <a id="ctl00_toplat_Repeater1_ctl02_lnkTitle" class="top" href="http://www.dotnetcurry.com/ShowArticle.aspx?ID=1451" style="color:#4A75AD;font-weight:normal;">.NET Core Application Development in Visual Studio Code (VS Code)</a>
+            
+                 <br><br>
+            
+            <a id="ctl00_toplat_Repeater1_ctl04_lnkTitle" class="top" href="http://www.dotnetcurry.com/ShowArticle.aspx?ID=1457" style="color:#4A75AD;font-weight:normal;">C# Sharding and Multithreading - Deep Dive</a>
+            
+                 <br><br>
+            
+            <a id="ctl00_toplat_Repeater1_ctl06_lnkTitle" class="top" href="http://www.dotnetcurry.com/ShowArticle.aspx?ID=1453" style="color:#4A75AD;font-weight:normal;">Angular Evolution - Version 1.x to 6</a>
+            
+                 <br><br>
+            
+            <a id="ctl00_toplat_Repeater1_ctl08_lnkTitle" class="top" href="http://www.dotnetcurry.com/ShowArticle.aspx?ID=1461" style="color:#4A75AD;font-weight:normal;">Command Query Separation (CQS) - A simple but powerful pattern</a>
+            
+                 <br><br>
+            
+            <a id="ctl00_toplat_Repeater1_ctl10_lnkTitle" class="top" href="http://www.dotnetcurry.com/ShowArticle.aspx?ID=1455" style="color:#4A75AD;font-weight:normal;">Interview with the C# Boss - Mads Torgersen</a>
+            
+                 <br><br>
+            
+            <a id="ctl00_toplat_Repeater1_ctl12_lnkTitle" class="top" href="http://www.dotnetcurry.com/ShowArticle.aspx?ID=1452" style="color:#4A75AD;font-weight:normal;">Xamarin.Forms 3 - Cheat sheet</a>
+            
+                 <br><br>
+            
+            <a id="ctl00_toplat_Repeater1_ctl14_lnkTitle" class="top" href="http://www.dotnetcurry.com/ShowArticle.aspx?ID=1464" style="color:#4A75AD;font-weight:normal;">Writing Pure Code in C#</a>
+            
+                 <br><br>
+            
+            <a id="ctl00_toplat_Repeater1_ctl16_lnkTitle" class="top" href="http://www.dotnetcurry.com/ShowArticle.aspx?ID=1460" style="color:#4A75AD;font-weight:normal;">Blazor - .NET in the browser</a>
+            
+                 <br><br>
+            
+            <a id="ctl00_toplat_Repeater1_ctl18_lnkTitle" class="top" href="http://www.dotnetcurry.com/ShowArticle.aspx?ID=1465" style="color:#4A75AD;font-weight:normal;">The Evolution of C#</a>
+            
+                 <br><br>
+            
+            <a id="ctl00_toplat_Repeater1_ctl20_lnkTitle" class="top" href="http://www.dotnetcurry.com/ShowArticle.aspx?ID=1448" style="color:#4A75AD;font-weight:normal;">Angular HttpClient Deep Dive (Headers, HTTP events, non-JSON data and Interceptors)</a>
+            
+                 <br><br>
+            
+            <a id="ctl00_toplat_Repeater1_ctl22_lnkTitle" class="top" href="http://www.dotnetcurry.com/ShowArticle.aspx?ID=1466" style="color:#4A75AD;font-weight:normal;">How to Choose the Right .NET Collection Class?</a>
+            
+                 <br><br>
+            
+            <a id="ctl00_toplat_Repeater1_ctl24_lnkTitle" class="top" href="http://www.dotnetcurry.com/ShowArticle.aspx?ID=1456" style="color:#4A75AD;font-weight:normal;">Integration Testing made Simple for CRUD applications with SqlLocalDB</a>
+            
+                 <br><br>
+            
+            <a id="ctl00_toplat_Repeater1_ctl26_lnkTitle" class="top" href="http://www.dotnetcurry.com/ShowArticle.aspx?ID=1450" style="color:#4A75AD;font-weight:normal;">Ahead of Time Compilation - AoT in Angular (Performance Improvements)</a>
+            
+                 <br><br>
+            
+            <a id="ctl00_toplat_Repeater1_ctl28_lnkTitle" class="top" href="http://www.dotnetcurry.com/ShowArticle.aspx?ID=1459" style="color:#4A75AD;font-weight:normal;">Serverless Apps with Azure Functions</a>
+            
+        <br>
+        <br>
+        <br>
+        
+                                </div>
+                            </div>
+
+                            <div class="sec-title">
+                                <h3><b>C# .NET BOOK</b></h3>
+                            </div>
+                            <div class="side-widget"> 
+			                    <a href="http://www.dotnetcurry.org/r/dnc-csharpbk-web-300x600x2-green" rel="nofollow" target="_blank"><img src="./Building Angular Applications using ASP.NET Core Angular CLI Template _ DotNetCurry_files/csharpbook-300x600-2.jpg" style="width:300px;" alt="C# Book for Building Concepts and Interviews"></a>
+                            </div>
+
+                            <div class="sec-title-plain">
+                                 <h4>Tags</h4>
+                            </div>
+                            <div class="side-widget">
+                                <div class="tags">
+                                    <a href="https://www.dotnetcurry.com/tutorials/aspnet-mvc">ASP.NET MVC</a>
+                                    <a href="https://www.dotnetcurry.com/tutorials/aspnet-core">ASP.NET Core</a>
+                                    <a href="https://www.dotnetcurry.com/tutorials/aspnet">ASP.NET</a>
+                                    <a href="https://www.dotnetcurry.com/tutorials/sharepoint">SharePoint</a>
+                                    <a href="https://www.dotnetcurry.com/tutorials/patterns-practices">Design Patterns</a>
+                                    <a href="https://www.dotnetcurry.com/tutorials/csharp">C#</a>
+                                    <a href="https://www.dotnetcurry.com/tutorials/linq">LINQ</a>
+                                    <a href="https://www.dotnetcurry.com/tutorials/wpf">WPF</a>
+                                    <a href="https://www.dotnetcurry.com/tutorials/wcf">WCF</a>
+                                    <a href="https://www.dotnetcurry.com/tutorials/visualstudio">Visual Studio</a>
+                                    <a href="https://www.dotnetcurry.com/tutorials/vsts-tfs">VSTS &amp; TFS</a>
+                                    <a href="https://www.dotnetcurry.com/tutorials/windows-azure">Azure</a>
+                                    <a href="https://www.dotnetcurry.com/tutorials/entityframework">Entity Framework</a>
+                                    <a href="https://www.dotnetcurry.com/tutorials/angularjs">Angular.js</a>
+                                    <a href="https://www.dotnetcurry.com/tutorials/reactjs">React.js</a>
+                                    <a href="https://www.dotnetcurry.com/tutorials/jquery-aspnet">jQuery</a>
+                                    <a href="https://www.dotnetcurry.com/tutorials/html5-javascript">JavaScript</a>
+                                    <a href="https://www.dotnetcurry.com/tutorials/html5-javascript">HTML5</a>
+                                    <a href="https://www.dotnetcurry.com/tutorials/dotnet-standard-core">.NET Core</a>
+                                    <a href="https://www.dotnetcurry.com/tutorials/dotnetframework">.NET Framework</a>
+                                </div>
+                            </div>
+
+                            <div class="sec-title">
+                                <h3><b>JQUERY COOKBOOK</b></h3>
+                            </div>
+                            <div class="side-widget">
+                                <a href="https://www.dotnetcurry.net/s/dnc-jqcookbook" rel="nofollow" target="_blank"><img src="./Building Angular Applications using ASP.NET Core Angular CLI Template _ DotNetCurry_files/300x300-jqckbk.png" alt="jQuery CookBook"></a>
+                            </div>		                
+                       
+                            
+
+
+                    </div>
+	            </div>                
+
+            </div> 
+            <!-- container -->
+
+	    
+        </div>
+
+        <!-- footer -->
+        <footer class="margin-top-30">
+            <div class="container">
+                <div class="footer-head">
+                        <div class="row center-content">
+                        <div class="col-md-2 col-sm-3">
+                            <a href="https://www.dotnetcurry.com/">
+                                <img data-src="/img/dnc-logo-tee-trans.png" class="img-responsive lazyload" alt="">
+                            </a>
+                        </div>
+                        <div class="col-md-6 col-sm-4">
+                    <p></p>
+                </div>
+                <!--<div class="col-md-4 col-sm-5">
+                    <form class="footer-search">
+                        <input type="search" placeholder="Search">
+                        <button type="submit"><i class="fa fa-search"></i></button>
+                    </form>
+                </div>-->
+            </div>
+        </div>
+
+            <div class="footer-content">
+            <div class="row">
+                <div class="col-sm-2">
+                    <h5 class="text-white">Server-Side</h5>
+                    <ul class="footer-links">
+                        <li><a href="https://www.dotnetcurry.com/tutorials/aspnet">ASP.NET</a></li>
+                        <li><a href="https://www.dotnetcurry.com/tutorials/aspnet-core">ASP.NET Core</a></li>
+                        <li><a href="https://www.dotnetcurry.com/tutorials/aspnet-mvc">ASP.NET MVC</a></li>
+                        <li><a href="https://www.dotnetcurry.com/tutorials/wcf">WCF</a></li>
+                        <li><a href="https://www.dotnetcurry.com/tutorials/sharepoint">SharePoint</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-2">
+                    <h5 class="text-white">Client-side</h5>
+                    <ul class="footer-links">
+                        <li><a href="https://www.dotnetcurry.com/tutorials/angularjs">Angular.js</a></li>
+                        <li><a href="https://www.dotnetcurry.com/tutorials/reactjs">React.js</a></li>
+                        <li><a href="https://www.dotnetcurry.com/tutorials/jquery-aspnet">jQuery</a></li>
+                        <li><a href="https://www.dotnetcurry.com/tutorials/backbonejs">Backbone.js</a></li>
+                        <li><a href="https://www.dotnetcurry.com/tutorials/html5-javascript">HTML5</a></li>
+                        <li><a href="https://www.dotnetcurry.com/tutorials/bootstrap-css">CSS</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-2">
+                    <h5 class="text-white">.NET</h5>
+                    <ul class="footer-links">
+                        <li><a href="https://www.dotnetcurry.com/tutorials/csharp">C#</a></li>
+                        <li><a href="https://www.dotnetcurry.com/tutorials/visualstudio">Visual Studio</a></li>
+                        <li><a href="https://www.dotnetcurry.com/tutorials/vsts-tfs">VSTS &amp; TFS</a></li>
+                        <li><a href="https://www.dotnetcurry.com/tutorials/linq">LINQ</a></li>
+                        <li><a href="https://www.dotnetcurry.com/tutorials/entityframework">Entity Framework</a></li>
+                        <li><a href="https://www.dotnetcurry.com/tutorials/dotnetframework">.NET Framework</a></li>
+                        <li><a href="https://www.dotnetcurry.com/tutorials/dotnet-standard-core">.NET Standard &amp; .NET Core</a></li>
+                        <li><a href="https://www.dotnetcurry.com/tutorials/wpf">WPF</a></li>
+                        <li><a href="https://www.dotnetcurry.com/tutorials/winforms">WinForms</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-2">
+                    <h5 class="text-white">Cloud and Mobile</h5>
+                    <ul class="footer-links">
+                        <li><a href="https://www.dotnetcurry.com/tutorials/windows-azure">Microsoft Azure</a></li>
+                        <li><a href="https://www.dotnetcurry.com/tutorials/devops">DevOps</a></li>
+                        <li><a href="https://www.dotnetcurry.com/tutorials/xamarin">Xamarin</a></li>
+                        <li><a href="https://www.dotnetcurry.com/tutorials/powershell">Powershell</a></li>
+                        <li><a href="https://www.dotnetcurry.com/tutorials/machine-learning-ai">Machine Learning &amp; AI</a></li>
+                        <li><a href="https://www.dotnetcurry.com/tutorials/windows-store">UWP &amp; Windows Store</a></li>
+                        <li><a href="https://www.dotnetcurry.com/tutorials/windowsphone">Windows Phone</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-2">
+                    <h5 class="text-white">Skill Up</h5>
+                    <ul class="footer-links">
+                        <li><a href="https://www.dotnetcurry.com/tutorials/patterns-practices">Design Patterns</a></li>
+                        <li><a href="https://www.dotnetcurry.com/tutorials/software-gardening">Software Gardening</a></li>
+                        <li><a href="https://www.dotnetcurry.com/tutorials/dotnetinterview">.NET Interview Q&amp;A</a></li>
+                        <li><a href="https://www.dotnetcurry.com/magazine/" class="last">Magazines</a></li>
+                        <li><a href="http://www.jquerycookbook.com/" rel="nofollow" target="_blank">Books</a></li>
+                        <li><a href="https://www.dotnetcurry.com/tutorials/product-articles-review">Product Reviews</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-2">
+                    <h5 class="text-white">Follow Us</h5>
+                    <ul class="footer-social">
+                        <li><a href="https://www.facebook.com/dotnetcurry" rel="nofollow" target="_blank">Facebook</a></li>
+                        <li><a href="https://www.twitter.com/dotnetcurry" rel="nofollow" target="_blank">Twitter</a></li>
+                        <li><a href="https://github.com/dotnetcurry" rel="nofollow" target="_blank">Github</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+                <div class="footer-bottom">
+            <div class="row">
+                <div class="col-sm-6">
+                    <p>© 2007-2018 DotNetCurry.com (A subsidiary of A2Z Knowledge Visuals Pvt. Ltd). All rights reserved.</p>
+                </div>
+                <div class="col-sm-6 text-right">
+                    <ul class="list-inline">
+                        <li><a href="https://www.dotnetcurry.com/Contact.aspx">Contact Us</a></li>
+                        <li><a href="https://www.dotnetcurry.com/WriteForUs.aspx">Write For Us</a></li>
+                        <li><a href="https://www.dotnetcurry.com/PrivacyPolicy.aspx">Privacy</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+            </div>
+        </footer>
+        <!-- footer -->	
+    
+
+   <script src="./Building Angular Applications using ASP.NET Core Angular CLI Template _ DotNetCurry_files/jquery.min.js.téléchargement"></script>
+<script src="./Building Angular Applications using ASP.NET Core Angular CLI Template _ DotNetCurry_files/geoip2.js.téléchargement"></script>
+<script src="./Building Angular Applications using ASP.NET Core Angular CLI Template _ DotNetCurry_files/scriptsmin"></script>
+<script src="./Building Angular Applications using ASP.NET Core Angular CLI Template _ DotNetCurry_files/framework"></script>
+
+           <script type="text/javascript">
+               SyntaxHighlighter.defaults['auto-links'] = false;
+               SyntaxHighlighter.defaults['gutter'] = false;
+               SyntaxHighlighter.defaults['toolbar'] = false;
+               SyntaxHighlighter.all()
+            </script>
+            <script>
+                   $(function () {
+                       $('.tabHeader').children().first().addClass('current');
+                       $('.tabContent').children().first().addClass('current');
+
+
+                       $('.tabHeader li').click(function (e) {
+                           e.preventDefault();
+
+                           $(this).siblings('.current').removeClass('current');
+                           $(this).addClass('current');
+
+                           $('.tabContent').children('.current').removeClass('current');
+                           $('.tabContent').children().eq($(this).index()).addClass('current');
+                       });
+                   });
+            </script>
+    
+    <script src="./Building Angular Applications using ASP.NET Core Angular CLI Template _ DotNetCurry_files/webfont.js.téléchargement"></script>
+    <script>
+         WebFont.load({
+             google: {
+                 families: ['Hind Vadodara:300,400,500,600,700']
+             }
+         });
+    </script>
+
+</div></form></body></html>
